@@ -1,0 +1,1 @@
+enemytype=4

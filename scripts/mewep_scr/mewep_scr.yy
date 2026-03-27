@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"mewep_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"mewep_scr",
+  "parent":{
+    "name":"me",
+    "path":"folders/Scripts/Character/me.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

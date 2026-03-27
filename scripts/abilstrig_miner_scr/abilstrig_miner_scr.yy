@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"abilstrig_miner_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"abilstrig_miner_scr",
+  "parent":{
+    "name":"abiltrigs",
+    "path":"folders/Scripts/Abils/abiltrigs.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

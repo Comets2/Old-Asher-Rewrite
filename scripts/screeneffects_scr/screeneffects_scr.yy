@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"screeneffects_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"screeneffects_scr",
+  "parent":{
+    "name":"Control",
+    "path":"folders/Scripts/Control.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

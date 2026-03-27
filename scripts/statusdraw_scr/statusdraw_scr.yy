@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"statusdraw_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"statusdraw_scr",
+  "parent":{
+    "name":"Character",
+    "path":"folders/Scripts/Character.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

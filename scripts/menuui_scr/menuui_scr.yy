@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"menuui_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"menuui_scr",
+  "parent":{
+    "name":"Control",
+    "path":"folders/Scripts/Control.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

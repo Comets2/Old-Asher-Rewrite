@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"storearray_add",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"storearray_add",
+  "parent":{
+    "name":"Items",
+    "path":"folders/Scripts/Items.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

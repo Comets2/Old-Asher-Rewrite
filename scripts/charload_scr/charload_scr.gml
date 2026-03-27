@@ -1,0 +1,80 @@
+function charload_scr(argument0) {
+	if(argument0==0){
+	if(file_exists("Charslot1.sav")){
+	loadslot=file_text_open_read("Charslot1.sav")
+	charloadhelp_scr(0)
+	}else{
+	//CharArray_add(charslot,Empty,Empty,Empty,Empty,Empty,LastWalk,GridX,GridY,Mask Name,Kills,Deaths,Candy,Candy Collected)
+	chararray_add(argument0,0,0,0,0,0,0,0,3,0,0,0,0,0)
+	charequip_add(argument0,0,0,0,0,0,0,0)
+	for(i=0;i<10;i+=1){
+	maskarray_add(i,1,0,0,0,0,0,0,0,0,0,0)
+	if(i>3){
+	if(i==4){
+	maskarray_add(i,1,0,0,0,0,1,100,0,0,0,0)
+	}else{
+	if(i==5){
+	maskarray_add(i,1,0,0,0,0,1,500,0,0,0,0)
+	}else{
+	if(i==6){
+	maskarray_add(i,1,0,0,0,0,1,500,0,0,0,0)
+	}else{
+	if(i==8){
+	maskarray_add(i,1,0,0,0,0,1,300,0,0,0,0)
+	}else{
+	}}}}}}}
+	}else{
+	if(argument0==1){
+	if(file_exists("Charslot2.sav")){
+	loadslot=file_text_open_read("Charslot2.sav")
+	charloadhelp_scr(1)
+	}else{
+	chararray_add(argument0,0,0,0,0,0,0,0,3,0,0,0,0,0)
+	charequip_add(argument0,0,0,0,0,0,0,0)
+	for(i=0;i<10;i+=1){
+	maskarray_add(i,1,0,0,0,0,0,0,0,0,0,0)
+	if(i>3){
+	if(i==4){
+	maskarray_add(i,1,0,0,0,0,1,100,0,0,0,0)
+	}else{
+	if(i==5){
+	maskarray_add(i,1,0,0,0,0,1,500,0,0,0,0)
+	}else{
+	if(i==6){
+	maskarray_add(i,1,0,0,0,0,1,500,0,0,0,0)
+	}else{
+	if(i==8){
+	maskarray_add(i,1,0,0,0,0,1,300,0,0,0,0)
+	}else{
+	}}}}}}}
+	}else{
+	if(argument0==2){
+	if(file_exists("Charslot3.sav")){
+	loadslot=file_text_open_read("Charslot3.sav")
+	charloadhelp_scr(2)
+	}else{
+	chararray_add(argument0,0,0,0,0,0,0,0,3,0,0,0,0,0)
+	charequip_add(argument0,0,0,0,0,0,0,0)
+	for(i=0;i<10;i+=1){
+	maskarray_add(i,1,0,0,0,0,0,0,0,0,0,0)
+	if(i>3){
+	if(i==4){
+	maskarray_add(i,1,0,0,0,0,1,100,0,0,0,0)
+	}else{
+	if(i==5){
+	maskarray_add(i,1,0,0,0,0,1,500,0,0,0,0)
+	}else{
+	if(i==6){
+	maskarray_add(i,1,0,0,0,0,1,500,0,0,0,0)
+	}else{
+	if(i==8){
+	maskarray_add(i,1,0,0,0,0,1,300,0,0,0,0)
+	}else{
+	}}}}}}}
+	}}}
+
+	inven_scr(1)
+
+
+
+}

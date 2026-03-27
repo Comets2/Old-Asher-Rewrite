@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"abilstrigen_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"abilstrigen_scr",
+  "parent":{
+    "name":"enemy",
+    "path":"folders/Scripts/Abils/enemy.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

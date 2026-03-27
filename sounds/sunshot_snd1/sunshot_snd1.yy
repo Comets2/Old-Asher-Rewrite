@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sunshot_snd1",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.0,
+  "exportDir":"",
+  "name":"sunshot_snd1",
+  "parent":{
+    "name":"sungod",
+    "path":"folders/Sounds/me/abils/sungod.yy",
+  },
+  "preload":true,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sunshot_snd1",
+  "volume":1.0,
+}

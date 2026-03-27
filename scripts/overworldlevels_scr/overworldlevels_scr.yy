@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"overworldlevels_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"overworldlevels_scr",
+  "parent":{
+    "name":"Control",
+    "path":"folders/Scripts/Control.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

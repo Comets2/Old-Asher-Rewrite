@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"lifesnd1",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":0,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.0,
+  "exportDir":"",
+  "name":"lifesnd1",
+  "parent":{
+    "name":"me",
+    "path":"folders/Sounds/me.yy",
+  },
+  "preload":true,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"lifesnd1",
+  "volume":0.33,
+}

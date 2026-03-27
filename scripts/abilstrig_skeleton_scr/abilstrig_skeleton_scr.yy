@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"abilstrig_skeleton_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"abilstrig_skeleton_scr",
+  "parent":{
+    "name":"abiltrigs",
+    "path":"folders/Scripts/Abils/abiltrigs.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

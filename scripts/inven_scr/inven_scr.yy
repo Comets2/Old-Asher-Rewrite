@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"inven_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"inven_scr",
+  "parent":{
+    "name":"Control",
+    "path":"folders/Scripts/Control.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

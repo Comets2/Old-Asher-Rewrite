@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"projchecken_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"projchecken_scr",
+  "parent":{
+    "name":"enemy",
+    "path":"folders/Scripts/Abils/enemy.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,1070 @@
+function forestenemy_4_scr() {
+
+	if(enemytype==1){
+	Control.bottles=0
+
+	if(phase>0){
+	//----------------------------------------------------------------*****************{ALWAYS}*****************----------------------------------------------------------------
+	hearttree.y=y
+
+	if(hp<180-60){
+	if(treehealthcheck==0){
+	treehealthcheck=1
+	hearttree.image_index=1
+	Dummy_obj.leafimg=1
+	image_speed=0.35
+	sprite_index=treehearttwo_spr
+	with(Dummy_object){
+	if(pin==60){
+	sprite_index=treeheartleafshieldtwo_spr
+	}}
+	}
+	if(hp<180-120){
+	if(treehealthcheck==1){
+	treehealthcheck=2
+	hearttree.image_index=2
+	Dummy_obj.leafimg=2
+	image_speed=0.5
+	sprite_index=treeheartthree_spr
+	xmid=sprite_width/2
+	ymid=sprite_height/2
+	with(Dummy_object){
+	if(pin==60){
+	sprite_index=treeheartleafshieldthree_spr
+	}}}}}
+
+	//----------------******{ELEVATOR}******----------------
+	//Always
+	with(Me){
+	hit=instance_place(x,y+1,Solid_plat)
+	if(hit!=noone){
+	if(hit.type==66){
+	vsp-=2.25
+	if(dmgsafety<=0){
+	dmgsafety=3
+	//DAMAGE
+	dr+=other.damage
+	drdraw+=other.damage
+	if(hurt<=0){
+	hurttick=1
+	}}
+	y-=1
+	}}}
+
+	//TREE HEART
+	if(tick==0){
+	if(y<starty+range){
+	y+=0.1
+	}else{
+	tick=1
+	}}else{
+	if(y>starty-range){
+	y-=0.1
+	}else{
+	tick=0
+	}}
+	//Elevator
+	if(elevdelay>0){
+	elevdelay-=1
+	}else{
+	elevdelay=2
+	if(elevtick==0){
+	if(elevy<elevrange){
+	elevy+=1
+	if(elevy<0-(elevrange-26)){
+	with(Solid_plat){
+	if(type==65||type==66){
+	if(instance_place(x,y-1,Me)){
+	Me.y+=1
+	}
+	y+=1
+	}}}}else{
+	elevtick=1
+	}}else{
+	if(elevy>0-elevrange){
+	elevy-=1
+	if(elevy>elevrange-26){
+	with(Solid_plat){
+	if(type==65||type==66){
+	if(instance_place(x,y-1,Me)){
+	Me.y-=1
+	}
+	y-=1
+	}}}}else{
+	elevtick=0
+	}}}
+
+	//Phase 2 +
+	if(phase>1&&phase<3){
+
+	if(facecheck.phase==0||facecheck==10){
+	if(option>0){
+	option-=1
+	facecheck=0
+
+	if(facechance==0){
+	facechance=2
+	}else{
+	if(facechance==1){
+	facechance=3
+	}else{
+	if(facechance==2){
+	facechance=1
+	}else{
+	if(facechance==3){
+	facechance=0
+	}}}}
+	if(facechance==0){
+	faceone.phase=1
+	faceone.check=1
+	facecheck=faceone
+	}else{
+	if(facechance==1){
+	facetwo.phase=1
+	facetwo.check=1
+	facecheck=facetwo
+	}else{
+	if(facechance==2){
+	facethree.phase=1
+	facethree.check=1
+	facecheck=facethree
+	}else{
+	if(facechance==3){
+	facefour.phase=1
+	facefour.check=1
+	facecheck=facefour
+	}}}}}else{
+	phase=3
+	opt=1
+	check=1
+	ringtick=0
+	}}
+	}
+
+	}
+
+	//*************************{PHASE: 0}*************************
+	if(phase==0){
+	if(check==1){
+	hpphaseopt=0
+	leafimg=0
+	x-=8
+	y-=24
+	ending=1
+	treehealthcheck=0
+	spotspot=0
+	overopt=0
+
+	endingx=1360-8
+	endingy=209
+	extragold=50
+
+	Control.enemytarget=id
+	name="Elder Tree"
+	hpbuffer=0
+
+
+
+	hp=180
+	healthproc=1
+	healthprocsave=180
+	hpphase=hp
+	hpphaseamount=30
+	ringsize=5
+	ringsizetwo=2
+	ringtick=0
+	ringrange=3
+	ringstart=17
+	ringsped=0.2
+	ringspedtwo=-0.2
+
+	attdelay=400
+	opt=0
+	depth=Me.depth+1
+	tick=0
+	range=10
+	elevrange=48
+	elevy=0
+	elevtick=0
+	sped=0.1
+	sped=1
+	elevdelay=0
+	check=0
+	starty=floor(y)
+	sprite_index=treeheart_spr
+	mask_index=sprite_index
+	xmid=sprite_width/2
+	ymid=sprite_height/2
+	image_speed=0.3
+	xspot=1232
+	yspot=256
+	phase=1
+	for(i=0;i<8;i+=1){
+	if(i!=3&&i!=4){
+	created=instance_create(xspot,yspot,Solid_plat)
+	with(created){
+	depth=101
+	visible=true
+	i=other.i
+	type=65
+	sprite_index=treeheartpillar_spr
+	image_speed=0
+	phase=0
+	if(i==2||i==7){
+	created=instance_create(x+16,y+16,Solid_plat)
+	with(created){
+	depth=101
+	visible=true
+	type=66
+	sprite_index=treeheartspike_spr
+	image_speed=0
+	phase=0
+	}}
+	created=instance_create(x-16,y+16,Solid_plat)
+	with(created){
+	depth=101
+	visible=true
+	type=66
+	sprite_index=treeheartspike_spr
+	image_speed=0
+	phase=0
+	}}}
+	other.xspot+=32
+	if(other.i==4){
+	other.xspot+=32
+	}
+	}
+	hearttree=instance_create(x,y,Dummy_two_object)
+	with(hearttree){
+	pin=61
+	sprite_index=treehearttree_spr
+	image_speed=0
+	depth=other.depth+1
+	phase=0
+	}}
+	}else{
+
+	//*************************{PHASE: 1}*************************
+	if(phase==1){
+	phase=2
+	check=1
+
+	//Leaf Shield CREATE
+	for(i=0;i<20;i+=1){
+	leaf=instance_create(x,y,Dummy_object)
+	with(leaf){
+	image_angle=irandom(360)
+	creator=id
+	num=other.i
+	damage=1
+	sprite_index=treeheartleafshield_spr
+	image_speed=0
+	image_index=irandom(1)
+	duration=360
+	option=0
+	dir1=num*36
+	dir3=num*36
+	phase=0
+	pin=60
+	if(other.i<=9){
+	ringtype=0
+	}else{
+	ringtype=1
+	}}}
+	check=0
+	mask_index=dummy_spr
+	if(overopt<3){
+	overopt+=1
+	for(i=0;i<overopt;i+=1){
+	if(spotspot==0){
+	spotspot=choose(1,2)
+	}else{
+	if(spotspot==1){
+	spotspot=2
+	}else{
+	spotspot=1
+	}}
+	if(spotspot==1){
+	xspot=random_range(1248,1312)
+	}else{
+	xspot=random_range(1408,1472)
+	}
+	yspot=random_range(160,190)
+
+	for(i=0;i<4;i+=1){
+	if(other.i==0){
+	faceone=instance_create(1184-16,64,Enemy)
+	created=faceone
+	}else{
+	if(other.i==1){
+	facetwo=instance_create(1184-16,192,Enemy)
+	created=facetwo
+	}else{
+	if(other.i==2){
+	facethree=instance_create(1504+16,64,Enemy)
+	created=facethree
+	}else{
+	if(other.i==3){
+	facefour=instance_create(1504+16,192,Enemy)
+	created=facefour
+	}}}}
+
+	with(created){
+	depth+=2
+	enemytype=3
+
+	hurtsound=snd_bosshurt_tree_2
+	hurtsoundtwo=snd_bosshurt_tree_3
+
+	solidface=instance_create(x,y,Solid_noslope)
+	with(solidface){
+	faceone=dummy_spr
+	facetwo=other.sprite_index
+	sprite_index=dummy_spr
+	image_speed=0
+	image_index=other.image_index
+	}
+
+	check=1
+	creator=other.id
+	sprite_index=forestboss_head_spr
+	image_speed=0
+	if(x>1500){
+	image_index=1
+	}
+	mask_index=sprite_index
+	tick=0
+	range=5
+	sped=0.25
+	ticktwo=0
+	rangetwo=10
+	spedtwo=0.5
+	startx=x
+	starty=y
+	attdelay=90
+	created=0
+	opt=3
+	hp=100
+	check=1
+	if(x>1500){
+	image_index=1
+	}
+	mouth=instance_create(x,y,Dummy_two_object)
+	with(mouth){
+
+	attacksound=snd_bossproj_tree_1
+	attacksoundtwo=snd_bossproj_tree_2
+	attacksoundthree=snd_bossproj_tree_3
+	attacksoundfour=snd_bossproj_tree_4
+
+	attacktype=1
+	depth+=2
+	pin=74
+	sprite_index=forestboss_mouth_spr
+	image_speed=0
+	image_index=0
+	image_xscale=other.image_xscale
+	creator=other.id
+	if(x>1500){
+	image_xscale=-1
+	x+=(sprite_width)*-1
+	}}
+	eyes=instance_create(x,y,Dummy_two_object)
+	with(eyes){
+	depth+=2
+	pin=74
+	sprite_index=forestboss_eyes_spr
+	image_speed=0
+	image_index=0
+	if(x>1500){
+	image_xscale=-1
+	x+=(sprite_width)*-1
+	}
+	creator=other.id
+	}
+	immune=1
+	mouth.visible=false
+	eyes.visible=false
+	}}
+	option=3
+	facechance=irandom(3)
+	if(facechance==0){
+	faceone.phase=1
+	facecheck=faceone
+	}else{
+	if(facechance==1){
+	facetwo.phase=1
+	facecheck=facetwo
+	}else{
+	if(facechance==2){
+	facethree.phase=1
+	facecheck=facethree
+	}else{
+	if(facechance==3){
+	facefour.phase=1
+	facecheck=facefour
+	}}}}
+
+	}}
+	}else{
+
+	//*************************{PHASE: 2}*************************
+	//Wait Phase
+	if(phase==2){
+
+	if(check==1){
+	check=0
+	mask_index=dummy_spr
+	healthproc=1
+	immune=1
+	}
+
+	//**************{EARLY PHASE}**************
+	if(overopt<4){
+	//LEAF SPAWN
+	checkalive=0
+	checkalive=1
+	if(checkalive==1){
+
+
+	}else{
+
+	phase=3
+	opt=1
+	check=1
+	ringtick=0
+
+	}}else{
+	//**************{LATE PHASE}**************
+
+	}
+
+	//Attack
+	if(attdelay>0){
+	attdelay-=1
+	}else{
+
+	}
+
+	if(ringtick==0){
+	if(ringsize<ringstart+ringrange){
+	ringsize+=ringsped
+	ringsizetwo+=ringsped
+	}else{
+	ringtick=1
+	}}else{
+	if(ringsize>ringstart-ringrange){
+	ringsize-=ringsped
+	ringsizetwo-=ringsped
+	}else{
+	ringtick=0
+	}}
+
+	//Leaf Shield
+	with(Dummy_object){
+	if(pin==60){
+	image_angle-=10
+	dir2=(dir1+6+360)mod(360)
+	dir1=dir2
+	dir4=(dir3+4+360)mod(360)
+	dir3=dir4
+	if(ringtype==0){
+	x=lengthdir_x(other.ringsize,dir2)+other.x+62
+	y=lengthdir_y(other.ringsize,dir2)+other.y+72
+	}else{
+	x=lengthdir_x(other.ringsizetwo,dir4)+other.x+62
+	y=lengthdir_y(other.ringsizetwo,dir4)+other.y+72
+	}
+	xspot=other.x+62
+	yspot=other.y+72
+	//mask_index=sprite_index
+	//Me
+	hit=instance_place(x,y,Me)
+	if(hit!=noone){
+	with(Me){
+	if(Me.x+10<other.xspot){
+	x-=5
+	}else{
+	x+=5
+	}
+	if(Me.y+10<other.yspot){
+	y-=5
+	}else{
+	y+=5
+	}
+	dr+=other.damage
+	drdraw+=other.damage
+	if(hurt<=0){
+	hurttick=1
+	}}
+	}
+	//Projectile
+	if(instance_exists(Projectile)){
+	hit=instance_place(x,y,Projectile)
+	if(hit!=noone){
+	with(hit){
+	if(recheck==0){
+	x=other.x
+	y=other.y
+	phase=-1
+	duration=0
+	//deathphase=1
+	recheck=1
+	}}}}
+	//Projectile Other
+	hit=instance_place(x,y,Dummy_object)
+	if(hit!=noone){
+	with(hit){
+	if(pin<60||pin>=70){
+	phase=-1
+	duration=0
+	}}}
+
+	if(phase=-1){
+	//instance_destroy()
+	}}else{
+	//STINGER
+	if(pin==67){
+	hit=instance_place(x,y,Me)
+	if(hit!=noone){
+	with(Me){
+	vsp=-2
+	dr+=other.damage
+	drdraw+=other.damage
+	if(hurt<=0){
+	hurttick=1
+	}
+	other.duration=0
+	}}
+	if(duration>0){
+	duration-=1
+	}else{
+	instance_destroy()
+	}}else{
+	//Leaf TELE
+	if(pin==68){
+	image_angle+=spin
+	x+=spin/5
+	y+=sped
+	if(duration>0){
+	duration-=1
+	}else{
+	instance_destroy()
+	}
+	}}}}
+
+	}else{
+
+	//*************************{PHASE: 3}*************************
+	if(phase==3){
+	if(check==1){
+	check=0
+	mask_index=sprite_index
+	healthproc=0
+	immune=0
+	}
+
+	//RING SIZE
+	if(ringtick==0){
+	if(ringsize<ringstart+ringrange*45){
+	ringsize+=ringsped*2
+	}else{
+	if(hp<hpphase-hpphaseamount){
+	hpphase=hpphase-hpphaseamount
+	ringtick=1
+	}}}else{
+	if(ringsize>ringstart-ringrange){
+	ringsize-=ringsped*8
+	}else{
+	ringtick=0
+	if(opt>1){
+	opt-=1
+	}else{
+	phase=2
+	healthprocsave=hp
+	mask_index=dummy_spr
+	healthproc=1
+	immune=1
+	attdelay=300
+	//facecheck=1
+	option=4
+	}
+	}}
+
+	//Leaf Shield
+	with(Dummy_object){
+	if(pin==60){
+	image_angle-=25
+	dir2=(dir1+0.01+360)mod(360)
+	dir1=dir2
+	x=lengthdir_x(other.ringsize,dir2)+other.x+62
+	y=lengthdir_y(other.ringsize,dir2)+other.y+72
+	xspot=other.x+62
+	yspot=other.y+72
+	//mask_index=sprite_index
+	//Me
+	if(Me.hurt<=0){
+	hit=instance_place(x,y,Me)
+	if(hit!=noone){
+	with(Me){
+	dr+=other.damage
+	drdraw+=other.damage
+	if(hurt<=0){
+	hurttick=1
+	}}}
+	}
+
+	//Projectile
+	if(instance_exists(Projectile)){
+	hit=instance_place(x,y,Projectile)
+	if(hit!=noone){
+	with(hit){
+	x=other.x
+	y=other.y
+	phase=-1
+	duration=0
+	deathphase=1
+	}
+	}}
+	//Projectile Other
+	hit=instance_place(x,y,Dummy_object)
+	if(hit!=noone){
+	with(hit){
+	if(pin<60||pin>=70){
+	phase=-1
+	duration=0
+	}}
+	}
+
+	if(phase=-1){
+	}}else{
+	//Large Leaf
+	if(pin==62){
+	x-=1
+	x+=hsp
+	y+=vsp
+	hit=instance_place(x,y,Me)
+	if(hit!=noone){
+	with(Me){
+	vsp=-2
+	dr+=other.damage
+	drdraw+=other.damage
+	if(hurt<=0){
+	hurttick=1
+	}
+	other.duration=0
+	}}
+	image_angle+=hsp
+	if(duration>0){
+	duration-=1
+	}else{
+	instance_destroy()
+	}}else{
+	//Leaf TELE
+	if(pin==68){
+	image_angle+=spin
+	x+=spin/5
+	y+=sped
+	if(duration>0){
+	duration-=1
+	}else{
+	instance_destroy()
+	}
+	}}
+	}}
+
+
+	}
+	}}
+
+	if(phase>0){
+	//ALWAYS
+	if(healthproc==1){
+	hp=healthprocsave
+	}}
+
+	}}else{
+
+	//*********************************************------------------------------------------------------<<<*****{WOOD FACES:2}*****>>>------------------------------------------------------*********************************************
+	if(enemytype==3){
+	if(phase==0){
+	if(check==1){
+	merange=1000
+	check=0
+	immune=1
+	mouth.visible=false
+	eyes.visible=false
+	attacktype=0
+	mask_index=dummy_spr
+	solidface.sprite_index=sprite_index
+	}
+
+	}else{
+	if(phase==1){
+	if(check==1){
+	hp=1000
+	check=0
+	immune=0
+	eyes.animdelay=120+irandom(80)
+	eyes.visible=true
+	solidface.sprite_index=dummy_spr
+	mask_index=sprite_index
+
+	//Leaf effect
+	for(i=0;i<75;i+=1){
+	created=instance_create(x+sprite_width/2,y+sprite_height/2,Dummy_object)
+	with(created){
+	pin=68
+	sprite_index=leaftwo_spr
+	image_speed=0
+	image_index=Dummy_obj.leafimg
+
+	image_angle=irandom(360)
+	spin=choose(random_range(0.25,1),random_range(0.25,1)*-1,0)*5
+	sped=choose(random_range(0.25,1),random_range(0.25,1)*-1,0)
+	while(spin==0&&sped==0){
+	spin=choose(random_range(0.25,1),random_range(0.25,1)*-1,0)*5
+	sped=choose(random_range(0.25,1),random_range(0.25,1)*-1,0)
+	}
+	duration=50+irandom(25)
+	}}
+
+	with(mouth){
+	option=2
+	visible=true
+	chance=irandom(2)
+	animdelay=80+irandom(60)
+	phase=0
+	attdelay=120
+	attdelaymax=attdelay
+	}}
+	if(hp<960){
+	solidface.sprite_index=sprite_index
+	mask_index=dummy_spr
+
+	exps = instance_create(x,y+5,Item)
+	exps.itemtype=1
+
+	//Leaf effect
+	for(i=0;i<75;i+=1){
+	created=instance_create(x+sprite_width/2,y+sprite_height/2,Dummy_object)
+	with(created){
+	pin=68
+	sprite_index=leaftwo_spr
+	image_speed=0
+	image_index=Dummy_obj.leafimg
+	image_angle=irandom(360)
+	spin=choose(random_range(0.25,1),random_range(0.25,1)*-1,0)*5
+	sped=choose(random_range(0.25,1),random_range(0.25,1)*-1,0)
+	while(spin==0&&sped==0){
+	spin=choose(random_range(0.25,1),random_range(0.25,1)*-1,0)*5
+	sped=choose(random_range(0.25,1),random_range(0.25,1)*-1,0)
+	}
+	duration=50+irandom(25)
+	}}
+	phase=0
+	check=1
+	image_blend=c_white
+	hurt=0
+	}
+	with(eyes){
+	if(creator.hurt>0){
+	image_index=6
+	}else{
+	if(animdelay>0){
+	animdelay-=1
+	if(animdelay>25){
+	if(y+32<Me.y+10){
+	image_index=0
+	}else{
+	if(y>Me.y+10){
+	image_index=2
+	}else{
+	image_index=1
+	}}}else{
+	if(animdelay==25){
+	image_index=3
+	}else{
+	if(animdelay==20){
+	image_index=4
+	}else{
+	if(animdelay==15){
+	image_index=5
+	}else{
+	if(animdelay==10){
+	image_index=4
+	}else{
+	if(animdelay==5){
+	image_index=3
+	}}}}}}
+	}else{
+	animdelay=120+irandom(80)
+	}}}
+
+	//****Mouth****
+	with(mouth){
+	if(phase==0){
+	attdelay-=1
+	if(attdelay>20){
+	if(creator.hurt>0){
+	image_index=5
+	}else{
+	if(animdelay>0){
+	animdelay-=1
+	if(animdelay==50){
+	chance=irandom(3)
+	}else{
+	if(chance==0){
+	if(animdelay==25){
+	image_index=0
+	}else{
+	if(animdelay==20){
+	image_index=1
+	}else{
+	if(animdelay==15){
+	image_index=2
+	}else{
+	if(animdelay==10){
+	image_index=1
+	}else{
+	if(animdelay==5){
+	image_index=0
+	}}}}}
+	}else{
+	if(chance==1){
+	if(animdelay==40){
+	image_index=0
+	}else{
+	if(animdelay==35){
+	image_index=1
+	}else{
+	if(animdelay==25){
+	image_index=2
+	}else{
+	if(animdelay==20){
+	image_index=2
+	}else{
+	if(animdelay==15){
+	image_index=2
+	}else{
+	if(animdelay==10){
+	image_index=1
+	}else{
+	if(animdelay==5){
+	image_index=0
+	}}}}}}}
+	}else{
+	if(chance==2){
+	if(animdelay==35){
+	image_index=0
+	}else{
+	if(animdelay==30){
+	image_index=1
+	}else{
+	if(animdelay==15){
+	image_index=2
+	}else{
+	if(animdelay==10){
+	image_index=1
+	}else{
+	if(animdelay==5){
+	image_index=0
+	}}}}}}}}}
+	}else{
+	animdelay=50+irandom(30)
+	image_index=1
+	}}}else{
+
+	//ATTACK ONE
+	if(attacktype==0){
+	if(attdelay==20){
+	image_index=3
+	}else{
+	if(attdelay==12){
+	image_index=4
+
+	//Large Leaf
+	if(x<1500){
+	created=instance_create(creator.x+35,creator.y+45,Dummy_object)
+	}else{
+	created=instance_create(creator.x+12,creator.y+45,Dummy_object)
+	}
+	audio_play_sound_at(choose(snd_bossproj_tree_3,snd_bossproj_tree_4),x,y, 0, 90, 150, 0.5, false, 1) 
+	with(created){
+	pin=62
+	damage=1
+	sprite_index=largeleaf_spr
+	image_speed=0
+	image_index=(Dummy_obj.leafimg*2)+irandom(1)
+	image_angle=irandom(360)
+	if(Dummy_obj.leafimg==0){
+	sped=1.2
+	}else{
+	if(Dummy_obj.leafimg==0){
+	sped=1.8
+	}else{
+	sped=2.3
+	}}
+	move_towards_point(Me.x+10,Me.y+10,sped)
+	hsp=hspeed
+	vsp=vspeed
+	speed=0
+	duration=120+irandom(25)
+	}
+	}else{
+	if(attdelay==4){
+	image_index=3
+	}}}
+	if(attdelay<=0){
+	if(option<=0){
+	attdelay=attdelaymax
+	option=2
+	if(Dummy_obj.leafimg==2){
+	attacktype=choose(1,2)
+	}else{
+	attacktype=1
+	}}else{
+	if(Dummy_obj.leafimg==0){
+	attdelay=80
+	}else{
+	if(Dummy_obj.leafimg==1){
+	attdelay=60
+	}else{
+	attdelay=40
+	}
+	option-=1
+	}}}}else{
+
+	//ATTACK TWO
+	if(attacktype==1){
+	if(attdelay==20){
+	image_index=3
+	}else{
+	if(attdelay==12){
+
+	//Acorn
+	if(x<1500){
+	created=instance_create(creator.x+35,creator.y+45,Dummy_object)
+	created.type=0
+	}else{
+	created=instance_create(creator.x+12,creator.y+45,Dummy_object)
+	created.type=1
+	}
+	audio_play_sound_at(choose(snd_bossproj_tree_5,snd_bossproj_tree_6),x,y, 0, 90, 150, 0.5, false, 1) 
+	with(created){
+	pin=63
+	audioplay=0
+	damage=1
+	sprite_index=acorn_spr
+	image_speed=0
+	image_index=(Dummy_obj.leafimg*2)+irandom(1)
+	image_angle=irandom(360)
+	delay=10
+	if(y>100){
+	vsp=-5.1
+	hsp=(other.option*0.235)+1.5
+	}else{
+	vsp=-2.5
+	hsp=(other.option*0.3)+0.5
+	}
+	if(type==1){
+	hsp=hsp*-1
+	}
+	grav=0.05
+	duration=200
+	}
+	}else{
+	if(attdelay==4){
+	image_index=3
+	}}}
+	if(attdelay<=0){
+	if(option<=0){
+	attdelay=attdelaymax
+	option=5
+	if(Dummy_obj.leafimg==2){
+	attacktype=choose(0,2)
+	}else{
+	attacktype=0
+	}}else{
+	if(Dummy_obj.leafimg==0){
+	attdelay=60
+	option-=1
+	}else{
+	if(Dummy_obj.leafimg==1){
+	attdelay=45
+	option-=0.75
+	}else{
+	attdelay=30
+	option-=0.5
+	}}}}}else{
+
+	//ATTACK THREE
+	if(attacktype==2){
+	if(attdelay==20){
+	image_index=3
+	}else{
+	if(attdelay==12){
+	image_index=4
+
+	//Large Leaf
+	for(i=0;i<6;i+=1){
+	if(x<1500){
+	created=instance_create(creator.x+35,creator.y+45,Dummy_object)
+	}else{
+	created=instance_create(creator.x+12,creator.y+45,Dummy_object)
+	}
+	with(created){
+
+	pin=62
+	audio_play_sound_at(choose(snd_bossproj_tree_3,snd_bossproj_tree_4),x,y, 0, 90, 150, 0.5, false, 1) 
+	damage=1
+	sprite_index=treeheartleafshieldthree_spr
+	image_speed=0
+	image_index=(Dummy_obj.leafimg*2)+irandom(1)
+	image_angle=irandom(360)
+	sped=1.8
+	speed=sped
+	direction=point_direction(x,y,Me.x+10,Me.y)
+	if(other.i mod 2==0){
+	direction-=other.i*15
+	}else{
+	direction+=other.i*15
+	}
+	hsp=hspeed
+	vsp=vspeed
+	speed=0
+	duration=120+irandom(25)
+	}}
+	}else{
+	if(attdelay==4){
+	image_index=3
+	}}}
+	if(attdelay<=0){
+	if(option<=0){
+	attdelay=attdelaymax
+	option=2
+	if(Dummy_obj.leafimg==2){
+	attacktype=choose(1,2)
+	}else{
+	attacktype=1
+	}}else{
+	attdelay=70
+	option-=1
+	}}}
+
+	}
+
+	}}}else{
+	//PHASE1
+
+	}}
+	}else{
+	//------------------------------------------------------<<<*****{PHASE:2}*****>>>------------------------------------------------------
+
+	}}
+
+	}}
+
+
+
+}

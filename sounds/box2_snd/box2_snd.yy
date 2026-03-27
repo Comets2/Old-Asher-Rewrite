@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"box2_snd",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.0,
+  "exportDir":"",
+  "name":"box2_snd",
+  "parent":{
+    "name":"cantainer",
+    "path":"folders/Sounds/enemy/cantainer.yy",
+  },
+  "preload":true,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"box2_snd",
+  "volume":0.33,
+}

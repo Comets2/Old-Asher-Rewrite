@@ -1,0 +1,46 @@
+draw_sprite(blue,0,0,0)
+     draw_sprite_ext(cloud,cldi,-355+cldspd*ind,10-cldspd*ind,1,1,0,c_white,alpha)
+    draw_sprite_ext(cloud,cldi,-90+cldspd*ind,310-cldspd*ind,1,1,0,c_white,alpha)
+    draw_sprite_ext(cloud,cldi,0+cldspd*ind,-cldspd*ind,1,1,0,c_white,alpha)
+if(ind>=start1+10/slicespd)
+    {
+    draw_sprite(title,0,0,0)
+    }
+if(ind<start1+10/slicespd)
+    {
+    draw_sprite_ext(title,2,0,0,1,1,0,c_white,alpha2)
+    if(slicei<9)
+        {
+    draw_sprite_ext(mask,0,0,0,1,1,0,c_white,alpha)
+        }
+    if(slicei<6)
+        {
+        if(slicei>0)
+            {
+            draw_sprite_ext(title,4,0,0,1,1,0,c_white,alpha)
+            }
+          else
+            {
+            draw_sprite_ext(tree,treei,0,0,1,1,0,c_white,alpha)
+            }
+        }
+    draw_sprite_ext(title,1,0,0,1,1,0,c_white,alpha2)
+    if(ind>=start1)
+        {
+        draw_sprite(slice,slicei,0,0)
+        }
+    }
+if(slicei>=9)
+    {
+    if(mski==0)
+        {
+        mski=1
+        }
+    draw_sprite(mask,mski,0,0)
+    draw_sprite(title,3,0,0)
+draw_text_ext_transformed(1,1,"Version 1.0",1,1000,0.5,0.5,0)
+if(spedtick==1){
+draw_text_ext_transformed((__view_get( e__VW.WView, 0 )/2)-23,(__view_get( e__VW.HView, 0 )/2)+30,"Press Start",1,1000,0.5,0.5,0)
+}
+}
+

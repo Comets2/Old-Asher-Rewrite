@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"charcreates_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"charcreates_scr",
+  "parent":{
+    "name":"Control",
+    "path":"folders/Scripts/Control.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

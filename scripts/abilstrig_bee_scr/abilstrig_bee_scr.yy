@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"abilstrig_bee_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"abilstrig_bee_scr",
+  "parent":{
+    "name":"abiltrigs",
+    "path":"folders/Scripts/Abils/abiltrigs.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

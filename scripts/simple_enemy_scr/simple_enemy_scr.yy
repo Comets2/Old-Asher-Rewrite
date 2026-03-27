@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"simple_enemy_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"simple_enemy_scr",
+  "parent":{
+    "name":"EnemyTypes",
+    "path":"folders/Scripts/Character/EnemyTypes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

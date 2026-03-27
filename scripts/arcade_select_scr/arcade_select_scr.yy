@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"arcade_select_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"arcade_select_scr",
+  "parent":{
+    "name":"Arcade",
+    "path":"folders/Scripts/Arcade.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

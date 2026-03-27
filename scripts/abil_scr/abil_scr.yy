@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"abil_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"abil_scr",
+  "parent":{
+    "name":"Abils",
+    "path":"folders/Scripts/Abils.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

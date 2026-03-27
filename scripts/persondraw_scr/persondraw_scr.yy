@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"persondraw_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"persondraw_scr",
+  "parent":{
+    "name":"me",
+    "path":"folders/Scripts/Character/me.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

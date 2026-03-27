@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"maskarray_add",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"maskarray_add",
+  "parent":{
+    "name":"Control",
+    "path":"folders/Scripts/Control.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

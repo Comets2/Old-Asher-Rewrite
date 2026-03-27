@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"charactercheck_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"charactercheck_scr",
+  "parent":{
+    "name":"me",
+    "path":"folders/Scripts/Character/me.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

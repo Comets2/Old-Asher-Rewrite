@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"roboclown_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"roboclown_scr",
+  "parent":{
+    "name":"Boss",
+    "path":"folders/Scripts/Character/Boss.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

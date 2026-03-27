@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"abilstrig_gingerbread_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"abilstrig_gingerbread_scr",
+  "parent":{
+    "name":"abiltrigs",
+    "path":"folders/Scripts/Abils/abiltrigs.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

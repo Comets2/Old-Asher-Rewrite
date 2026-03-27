@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"projcheck_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"projcheck_scr",
+  "parent":{
+    "name":"abiltrigs",
+    "path":"folders/Scripts/Abils/abiltrigs.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

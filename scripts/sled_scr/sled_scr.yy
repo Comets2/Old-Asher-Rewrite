@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sled_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sled_scr",
+  "parent":{
+    "name":"Minigames",
+    "path":"folders/Scripts/Arcade/Minigames.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

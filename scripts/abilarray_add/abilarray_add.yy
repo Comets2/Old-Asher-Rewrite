@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"abilarray_add",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"abilarray_add",
+  "parent":{
+    "name":"Abils",
+    "path":"folders/Scripts/Abils.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

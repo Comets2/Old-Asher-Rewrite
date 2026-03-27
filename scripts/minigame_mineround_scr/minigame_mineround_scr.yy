@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"minigame_mineround_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"minigame_mineround_scr",
+  "parent":{
+    "name":"Mine",
+    "path":"folders/Scripts/Arcade/Minigames/Mine.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

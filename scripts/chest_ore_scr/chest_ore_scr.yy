@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"chest_ore_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"chest_ore_scr",
+  "parent":{
+    "name":"Mine",
+    "path":"folders/Scripts/Arcade/Minigames/Mine.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

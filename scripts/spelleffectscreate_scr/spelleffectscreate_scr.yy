@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"spelleffectscreate_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"spelleffectscreate_scr",
+  "parent":{
+    "name":"Particles",
+    "path":"folders/Scripts/Particles.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

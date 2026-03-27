@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"pet_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"pet_scr",
+  "parent":{
+    "name":"Abils",
+    "path":"folders/Scripts/Abils.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

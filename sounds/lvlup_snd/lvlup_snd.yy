@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"lvlup_snd",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.0,
+  "exportDir":"",
+  "name":"lvlup_snd",
+  "parent":{
+    "name":"effects",
+    "path":"folders/Sounds/effects.yy",
+  },
+  "preload":true,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"lvlup_snd",
+  "volume":0.44,
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"skullenemy_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"skullenemy_scr",
+  "parent":{
+    "name":"Boss",
+    "path":"folders/Scripts/Character/Boss.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

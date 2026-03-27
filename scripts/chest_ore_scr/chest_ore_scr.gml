@@ -1,0 +1,82 @@
+function chest_ore_scr() {
+	if(subtype==10){
+	dropnum=0
+	if(imgindex==1){
+	dropnum=5
+	}else{
+	if(imgindex==2){
+	dropnum=4
+	}else{
+	if(imgindex==3){
+	dropnum=3
+	}else{
+	if(imgindex==4){
+	dropnum=2
+	}else{
+	if(imgindex==5){
+	dropnum=1
+	}else{
+	if(imgindex==7){
+	created=instance_create(x+8,y+8,Dummy_object)
+	with(created){
+	sprite_index=mini_enabil1_spr
+	visible=true
+	image_index=0
+	image_speed=0.9
+	pin=70
+	}
+	instance_destroy()
+	}else{
+	if(imgindex==8){
+	created=instance_create(x+8,y+8,Dummy_object)
+	with(created){
+	sprite_index=spikeball_spr
+	visible=true
+	image_index=0
+	image_speed=0
+	pin=72
+	dmg=1
+	}
+	instance_destroy()
+	}}
+
+	}}}}}
+	for(i=dropnum;i>0;i-=1){
+	created=instance_create(x+5,y,Dummy_object)
+	with(created){
+	opened=0
+	respace=30
+	pin=76
+	sprite_index=moneyitem
+	image_speed=0
+	image_angle=irandom_range(-45,45)
+	if(other.imgindex=1){
+	subtype=5
+	image_index=3
+	}else{
+	if(other.imgindex=2){
+	subtype=6
+	image_index=4
+	}else{
+	if(other.imgindex=3){
+	subtype=7
+	image_index=5
+	}else{
+	if(other.imgindex=4){
+	subtype=8
+	image_index=6
+	}else{
+	if(other.imgindex=5){
+	subtype=9
+	image_index=7
+	}else{
+
+	}
+	}}}}
+	}
+	}
+	}
+
+
+
+}

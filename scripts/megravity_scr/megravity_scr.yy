@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"megravity_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"megravity_scr",
+  "parent":{
+    "name":"me",
+    "path":"folders/Scripts/Character/me.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

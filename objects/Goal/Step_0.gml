@@ -1,0 +1,16 @@
+if(delay<=0){
+if(place_meeting(x,y,Me)){
+with(Dummy_object){
+instance_destroy()
+}
+with(Dummy_two_object){
+instance_destroy()
+}
+with(Enemy){
+instance_destroy()
+}
+Control.ending=1
+instance_destroy()
+}}else{
+delay-=1
+}

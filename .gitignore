@@ -1,0 +1,14 @@
+# GameMaker Studio 2 ignores
+*.zip
+*.yyz
+*.yymp
+
+# Build output
+/output/
+
+# IDE metadata
+*.resource_order
+
+# OS files
+Thumbs.db
+.DS_Store

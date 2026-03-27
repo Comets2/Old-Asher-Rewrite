@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"classsetup_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"classsetup_scr",
+  "parent":{
+    "name":"Character",
+    "path":"folders/Scripts/Character.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,296 @@
+function worldtwo_rm3_control_scr() {
+	if(check==1){
+	check=0
+	created=instance_create(1296-32,608-32,Enemy)
+	created.enemytype=4
+	//Me.x=created.x-48
+	//Me.y=created.y+48
+	//Me.x=2736
+	//Me.y=650
+	//CHEST LOOTS
+	with(Control){
+	chestitemone=6
+	chestitemtwo=6
+	rmcheck=1
+	musicchange=music_graveyardlevel_theme1
+
+	if(actchoose==1){
+	//Save Book
+	created=instance_create(1600,144,Item)
+	created.itemtype=5
+
+	//Save Book
+	created=instance_create(96,416,Item)
+	created.itemtype=5
+	}else{
+
+	//Save Book
+	created=instance_create(7600,176,Item)
+	created.itemtype=5
+
+	//Save Book
+	created=instance_create(3744,656,Item)
+	created.itemtype=5
+	}
+
+	//Dream Bottles
+	//rm1
+	if(actchoose==1){
+
+	if(levelsArray[owLevels[charArray[charselected,6],charArray[charselected,7]]+actchoose-1,5]==0){
+	created=instance_create(512,16,Item)
+	with(created){
+	itemtype=4
+	iden=5
+	}}
+	if(levelsArray[owLevels[charArray[charselected,6],charArray[charselected,7]]+actchoose-1,6]==0){
+	created=instance_create(1520,16,Item)
+	with(created){
+	itemtype=4
+	iden=6
+	}}
+	if(levelsArray[owLevels[charArray[charselected,6],charArray[charselected,7]]+actchoose-1,7]==0){
+	created=instance_create(1024,352,Item)
+	with(created){
+	itemtype=4
+	iden=7
+	}}
+	}else{
+	//rm2
+	if(levelsArray[owLevels[charArray[charselected,6],charArray[charselected,7]]+actchoose-1,5]==0){
+	created=instance_create(2752,256,Item)
+	with(created){
+	itemtype=4
+	iden=5
+	}}
+	if(levelsArray[owLevels[charArray[charselected,6],charArray[charselected,7]]+actchoose-1,6]==0){
+	created=instance_create(3584,384,Item)
+	with(created){
+	itemtype=4
+	iden=6
+	}}
+	if(levelsArray[owLevels[charArray[charselected,6],charArray[charselected,7]]+actchoose-1,7]==0){
+	created=instance_create(3568,496,Item)
+	with(created){
+	itemtype=4
+	iden=7
+	}}}
+	}
+
+	with(Other_Solid_obj){
+	image_alpha=0
+	image_speed=0.2
+	sprite_index=grave_ghostblock_spr
+	pin=1
+	delay=0
+	depth=50
+	}
+
+	for(i=0;i<2;i+=1){
+	created=instance_create(1152,640,Dummy_three_object)
+	with(created){
+	//Gravestones
+	pin=46
+	sprite_index=boss_ghost_grave_spr
+	image_speed=0.05
+	depth=100
+	if(other.i==1){
+	x=1344
+	}
+	x+=16
+	}}
+	}
+
+	//PROJECTILES
+	with(Dummy_object){
+	//BOSS PROJ 1 wall
+	if(pin==40){
+
+	if(tick==0){
+	if(y<starty+8){
+	y+=0.1
+	}else{
+	tick=1
+	}
+	}else{
+	if(y>starty-8){
+	y-=0.1
+	}else{
+	tick=0
+	}}
+
+	if(sped>0){
+	if(x<endx){
+	x+=sped
+	}else{
+	instance_destroy()
+	}}else{
+	if(x>endx){
+	x+=sped
+	}else{
+	instance_destroy()
+	}}
+	}else{
+	//SPINNERS
+	if(pin==41){
+	if(tick==0){
+	if(x<xpostwo){
+	x+=sped
+	}else{
+	tick=1
+	image_angle=270
+	image_yscale=1
+	mask_index=sprite_index
+	}
+	}else{
+	if(tick==1){
+	if(y<ypostwo-32){
+	y+=sped
+	}else{
+	tick=2
+	image_angle=180
+	image_yscale=-1
+	mask_index=sprite_index
+	}
+	}else{
+	if(tick==2){
+	if(x>xpostwo-16){
+	x-=sped
+	}else{
+	tick=3
+	image_angle=270
+	image_yscale=1
+	mask_index=sprite_index
+	}
+	}else{
+	if(tick==3){
+	if(y<ypostwo){
+	y+=sped
+	}else{
+	tick=4
+	image_angle=180
+	image_yscale=-1
+	mask_index=sprite_index
+	}
+	}else{
+	if(tick==4){
+	if(x>xpos+16){
+	x-=sped
+	}else{
+	tick=5
+	image_angle=90
+	image_yscale=-1
+	mask_index=sprite_index
+	}
+	}else{
+	if(tick==5){
+	if(y>ypostwo-32){
+	y-=sped
+	}else{
+	tick=6
+	image_angle=180
+	image_yscale=-1
+	mask_index=sprite_index
+	}
+	}else{
+	if(tick==6){
+	if(x>xpos){
+	x-=sped
+	}else{
+	tick=7
+	image_angle=90
+	image_yscale=-1
+	mask_index=sprite_index
+	}
+	}else{
+	if(tick==7){
+	if(y>ypos){
+	y-=sped
+	}else{
+	tick=0
+	image_angle=0
+	image_yscale=1
+	mask_index=sprite_index
+	}
+	}}}}}}}}}else{
+	//Cone Attack
+	if(pin==42){
+	x+=xsped
+	y+=ysped
+	if(instance_place(x,y,Solid)){
+	instance_destroy()
+	}}else{
+	//Gravestones
+	if(pin==46){
+
+	}
+	}}
+
+	}
+	}
+	//GHOST BLOCKS
+	with(Other_Solid_obj){
+	if(pin==1){
+	if(delay>0){
+	delay-=1
+	}else{
+	if(image_alpha>0){
+	image_alpha-=0.025
+	}}}
+	}
+
+	with(Me){
+	hit=instance_place(x,y+2,Other_Solid_obj)
+	if(hit!=noone){
+	if(hit.image_alpha<1){
+	hit.image_alpha+=0.05
+	}
+	hit.delay=20
+	}
+	hit=instance_place(x+2,y,Other_Solid_obj)
+	if(hit!=noone){
+	if(hit.image_alpha<1){
+	hit.image_alpha+=0.05
+	}
+	hit.delay=20
+	}
+	hit=instance_place(x-2,y,Other_Solid_obj)
+	if(hit!=noone){
+	if(hit.image_alpha<1){
+	hit.image_alpha+=0.05
+	}
+	hit.delay=20
+	}
+	hit=instance_place(x,y-2,Other_Solid_obj)
+	if(hit!=noone){
+	if(hit.image_alpha<1){
+	hit.image_alpha+=0.05
+	}
+	hit.delay=20
+	}
+	hit=instance_place(x,y,Dummy_object)
+	if(hit!=noone){
+	if(dmgsafety<=0){
+	dmgsafety=3
+	//DAMAGE
+	debuff=1
+	debufftimer=6
+	if(x+10<hit.x){
+	debuffopt=-1.5
+	}else{
+	debuffopt=1.5
+	}
+	dr+=hit.damage
+	drdraw+=hit.damage
+	if(hurt<=0){
+	hurttick=1
+	}}
+	with(hit){
+	if(pin==40||pin==42){
+	instance_destroy()
+	}}
+	}}
+
+
+
+}

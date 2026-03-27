@@ -1,0 +1,12 @@
+tick=1
+sprite_index=retro_plattwo_spr
+spikes=instance_create(x,y-16,Dummy_object)
+with(spikes){
+pin=72
+sprite_index=retro_spikes_spr
+image_speed=0
+if(other.sprite_index==retro_plattwo_spr){
+image_index=1
+}else{
+image_index=0
+}}

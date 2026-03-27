@@ -1,0 +1,163 @@
+function equipment_ending_scr() {
+	//________________________________________________________________************<<{Chest choice}>>************________________________________________________________________
+	if(ending==2){
+	chestopt=2
+	if(con_p_enter||con_p_e||conp_p_space||conp_p_enter||con_p_escape||conp_p_escape||con_p_w||conp_p_q){
+	if(chestopt==0||actchoose!=2&&chestoptforce==0){
+	ending=10
+	}else{
+	chestoptforce=0
+	if(chestopt!=3){
+	if(itemtotal<itemcap){
+	ending=3
+	}else{
+	ending=6
+	}}else{
+	if(itemtotal+1<itemcap){
+	ending=3
+	}else{
+	ending=6
+	}}
+	equipopt=0
+	chestticktwo=0
+	chesttickthree=0
+	chesttick=0
+	chesttimes=1
+	justsold=0
+	}}
+	}else{
+	//________________________________________________________________************<<{Menu}>>************________________________________________________________________
+	if(ending==3){
+	if(con_p_enter||con_p_e||conp_p_space||conp_p_enter||con_p_escape||conp_p_escape||con_p_w||conp_p_q){
+	ending=4
+	}}else{
+	//________________________________________________________________************<<{Chest Animation}>>************________________________________________________________________
+	if(ending==4){
+	if(chesttick<10){
+	chesttick+=0.2
+	//item create
+	if(chesttick==0.6){
+	justsold=0
+	chesttickthree=1
+	equipselected=0
+	itemselected=itemtotal+4
+	equipopt=1
+	equipopttwo=0
+	equipcheck=0
+	equipcheck=1
+	itemdrawtick=4
+	itemdrawbase=0
+	itemtotalsafety=0
+	//item
+	if(chestopt==1){
+	itemcreate=chestitemone
+	}else{
+	if(chestopt==2){
+	itemcreate=chestitemtwo
+	}else{
+	if(chesttimes==0){
+	itemcreate=chestitemone
+	}else{
+	if(chesttimes==1){
+	itemcreate=chestitemtwo
+	}}}}
+	itemscreate_scr()
+	itemtotal+=1
+	itemselectedsave=itemsArray[itemtotal+3,16]
+	}
+	if(chestticktwo<4){
+	chestticktwo+=0.2
+	}}else{
+	ending=5
+	equipopt=0
+	equipopttwo=0
+	}}else{
+	//________________________________________________________________************<<{See Reward}>>************________________________________________________________________
+	if(ending==5){
+	if(pause==4){
+	if(justsold==0){
+	if(chesttickthree==1){
+	if(chesttick>8){
+	chesttick-=0.05
+	}else{
+	chesttickthree=2
+	}}else{
+	if(chesttick<12){
+	chesttick+=0.05
+	}else{
+	chesttickthree=1
+	}}
+
+	if(con_p_up||conp_p_up||con_p_down||conp_p_down){
+	if(equipopttwo==0){
+	equipopttwo=1
+	}else{
+	equipopttwo=0
+	}}
+	if(con_p_enter||con_p_e||conp_p_space||conp_p_enter){
+	if(equipopttwo==0){
+	pause=5
+	equipopt=0
+	}else{
+	if(chestopt!=3){
+	ending=10
+	}else{
+	if(chesttimes==0){
+	chesttimes=1
+	equipopt=0
+	chestticktwo=0
+	chesttickthree=0
+	chesttick=0
+	ending=4
+	}else{
+	ending=10
+	}}}}}else{
+	if(chestopt!=3){
+	ending=10
+	}else{
+	if(chesttimes==0){
+	if(con_p_enter||con_p_e||conp_p_space||conp_p_enter){
+
+	chesttimes=1
+	equipopt=0
+	chestticktwo=0
+	chesttickthree=0
+	chesttick=0
+	ending=4
+	}}else{
+	ending=10
+	}}}
+
+	}}else{
+	//________________________________________________________________************<<{Inventory Full}>>************________________________________________________________________
+	if(ending==6){
+	if(pause==4){
+	if(chestopt!=3){
+	if(itemtotal<itemcap){
+	ending=3
+	}}else{
+	if(itemtotal+1<itemcap){
+	ending=3
+	}}
+
+	if(con_p_up||conp_p_up||con_p_down||conp_p_down){
+	if(equipopttwo==0){
+	equipopttwo=1
+	}else{
+	equipopttwo=0
+	}}
+	if(con_p_enter||con_p_e||conp_p_space||conp_p_enter){
+	if(equipopttwo==0){
+	pause=5
+	equipopt=0
+	}else{
+	ending=10
+	}}
+
+	}}}}}
+
+	}
+
+
+
+}
