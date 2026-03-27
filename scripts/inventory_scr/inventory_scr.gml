@@ -29,8 +29,21 @@ function inventory_scr() {
 	maskcol=c_white
 	//Abil/info
 	if(charArray[charselected,8]==0){
-	//________________________________________________________________************<<{Miner}>>************________________________________________________________________
+	//________________________________________________________________************<<{Pumpkin}>>************________________________________________________________________
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
+	draw_text_ext_transformed_color(xposthree, yposthree,string_hash_to_newline("Pumpkin"),1,300,0.5,0.5,0,maskcol,maskcol,maskcol,maskcol,1);
+	draw_text_ext_transformed(20, 70,string_hash_to_newline("Explosive abilities"),3,1000,0.5,0.5,0);
+	draw_text_ext_transformed(20, 70+10,string_hash_to_newline("Area damage"),3,1000,0.5,0.5,0);
+	xpos=xpossave
+	ypos=ypossave
+	draw_text_ext_transformed(xpos, ypos,string_hash_to_newline("Bouncekins"),3,1000,0.5,0.5,0);
+	ypos+=yposplus
+	draw_text_ext_transformed(xpos, ypos+ypostwo,string_hash_to_newline("Harvest Charge"),3,1000,0.5,0.5,0);
+	ypos+=yposplus
+	draw_text_ext_transformed(xpos, ypos+ypostwo*2,string_hash_to_newline("Gourd Bomb"),3,1000,0.5,0.5,0);
+	}else{
+	//__________________________________________________<<{Miner}>>__________________________________________________
+	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==1){
 	draw_text_ext_transformed_color(xposthree, yposthree,string_hash_to_newline("Miner"),1,300,0.5,0.5,0,maskcol,maskcol,maskcol,maskcol,1);
 
 	draw_text_ext_transformed(20, 70,string_hash_to_newline("Explosive abilities"),3,3000,0.5,0.5,0);
@@ -44,37 +57,10 @@ function inventory_scr() {
 	draw_text_ext_transformed(xpos, ypos+ypostwo,string_hash_to_newline("Explosive Charge"),3,3000,0.5,0.5,0);
 	ypos+=yposplus
 	draw_text_ext_transformed(xpos, ypos+ypostwo*2,string_hash_to_newline("Bomb"),3,3000,0.5,0.5,0);
-	}else{
-	//__________________________________________________<<{Pumpkin}>>__________________________________________________
-	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==1){
-	draw_text_ext_transformed_color(xposthree, yposthree,string_hash_to_newline("Pumpkin"),1,300,0.5,0.5,0,maskcol,maskcol,maskcol,maskcol,1);
-	draw_text_ext_transformed(20, 70,string_hash_to_newline("Explosive abilities"),3,1000,0.5,0.5,0);
-	draw_text_ext_transformed(20, 70+10,string_hash_to_newline("Area damage"),3,1000,0.5,0.5,0);
-	xpos=xpossave
-	ypos=ypossave
-	draw_text_ext_transformed(xpos, ypos,string_hash_to_newline("Bouncekins"),3,1000,0.5,0.5,0);
-	ypos+=yposplus
-	draw_text_ext_transformed(xpos, ypos+ypostwo,string_hash_to_newline("Harvest Charge"),3,1000,0.5,0.5,0);
-	ypos+=yposplus
-	draw_text_ext_transformed(xpos, ypos+ypostwo*2,string_hash_to_newline("Gourd Bomb"),3,1000,0.5,0.5,0);
 	}}}else{
 	if(charArray[charselected,8]==1){
-	//________________________________________________________________************<<{Wizard}>>************________________________________________________________________
+	//________________________________________________________________************<<{Witch}>>************________________________________________________________________
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
-	draw_text_ext_transformed_color(xposthree, yposthree,string_hash_to_newline("Wizard"),1,300,0.5,0.5,0,maskcol,maskcol,maskcol,maskcol,1);
-	draw_text_ext_transformed(20, 70,string_hash_to_newline("Movement options using"),1,1000,0.5,0.5,0);
-	draw_text_ext_transformed(20, 70+10,string_hash_to_newline("broom and doves."),1,1000,0.5,0.5,0);
-	//draw_text_ext_transformed(20, 70+20,string_hash_to_newline("with further flight."),1,1000,0.5,0.5,0);
-	xpos=xpossave
-	ypos=ypossave
-	draw_text_ext_transformed(xpos, ypos,string_hash_to_newline("Broom"),1,1000,0.5,0.5,0);
-	ypos+=yposplus
-	draw_text_ext_transformed(xpos, ypos+ypostwo,string_hash_to_newline("Doves"),1,1000,0.5,0.5,0);
-	ypos+=yposplus
-	draw_text_ext_transformed(xpos, ypos+ypostwo*2,string_hash_to_newline("Spell"),1,1000,0.5,0.5,0);
-	}else{
-	//__________________________________________________<<{Witch}>>__________________________________________________
-	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==1){
 	draw_text_ext_transformed_color(xposthree, yposthree,string_hash_to_newline("Witch"),1,300,0.5,0.5,0,maskcol,maskcol,maskcol,maskcol,1);
 	draw_text_ext_transformed(20, 70,string_hash_to_newline("Movement options using"),1,1000,0.5,0.5,0);
 	draw_text_ext_transformed(20, 70+10,string_hash_to_newline("broom and doves."),1,1000,0.5,0.5,0);
@@ -84,6 +70,20 @@ function inventory_scr() {
 	draw_text_ext_transformed(xpos, ypos,string_hash_to_newline("Broom"),1,1000,0.5,0.5,0);
 	ypos+=yposplus
 	draw_text_ext_transformed(xpos, ypos+ypostwo,string_hash_to_newline("Bats"),1,1000,0.5,0.5,0);
+	ypos+=yposplus
+	draw_text_ext_transformed(xpos, ypos+ypostwo*2,string_hash_to_newline("Spell"),1,1000,0.5,0.5,0);
+	}else{
+	//__________________________________________________<<{Wizard}>>__________________________________________________
+	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==1){
+	draw_text_ext_transformed_color(xposthree, yposthree,string_hash_to_newline("Wizard"),1,300,0.5,0.5,0,maskcol,maskcol,maskcol,maskcol,1);
+	draw_text_ext_transformed(20, 70,string_hash_to_newline("Movement options using"),1,1000,0.5,0.5,0);
+	draw_text_ext_transformed(20, 70+10,string_hash_to_newline("broom and doves."),1,1000,0.5,0.5,0);
+	//draw_text_ext_transformed(20, 70+20,string_hash_to_newline("with further flight."),1,1000,0.5,0.5,0);
+	xpos=xpossave
+	ypos=ypossave
+	draw_text_ext_transformed(xpos, ypos,string_hash_to_newline("Broom"),1,1000,0.5,0.5,0);
+	ypos+=yposplus
+	draw_text_ext_transformed(xpos, ypos+ypostwo,string_hash_to_newline("Doves"),1,1000,0.5,0.5,0);
 	ypos+=yposplus
 	draw_text_ext_transformed(xpos, ypos+ypostwo*2,string_hash_to_newline("Spell"),1,1000,0.5,0.5,0);
 	}else{

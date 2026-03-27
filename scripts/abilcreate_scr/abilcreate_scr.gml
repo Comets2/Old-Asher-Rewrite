@@ -2,8 +2,8 @@ function abilcreate_scr(argument0) {
 	if(argument0==0){
 	//________________________________________________________________************<<{Pumpkin}>>************________________________________________________________________
 	//abilArray[]abilarray_add(abilnumber,Mana,Cooldown,Damage,Amount,Type,Duration,Action,Animdel,Wepdrawx,Wepdrawy,WepAngle1,WepAngle2)
-	//C4 Bomb
-	abilarray_add(0,10,18000,4.25,1,1,440,16,16,0,0,0,0)
+	//Pumpkin E - C4 Bomb
+	abilarray_add(0,10,18000,4.25,1,1,264,16,16,0,0,0,0)
 	//Little Pumpkins
 	abilarray_add(1,20,10,0.2,1,1,480,16,16,0,0,0,0)
 	//Plant Pumpkin

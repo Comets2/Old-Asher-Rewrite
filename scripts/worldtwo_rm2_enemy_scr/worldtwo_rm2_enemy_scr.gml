@@ -278,7 +278,7 @@ function worldtwo_rm2_enemy_scr() {
 	lastattack=phase
 	}else{
 	if(lastattack==3){
-	phase=choose(2)
+	phase=2
 	lastattack=phase
 	}}
 	}

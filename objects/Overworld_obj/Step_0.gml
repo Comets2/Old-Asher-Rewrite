@@ -211,19 +211,21 @@ check=1
 
 if(y!=toy){
 if(y<toy){
-y+=1
+y+=0.5
 }else{
-y-=1
+y-=0.5
 }}
 
 if(x!=tox){
 if(x<tox){
-x+=1
+x+=0.5
 }else{
-x-=1
+x-=0.5
 }}
 
-if(x==tox&&y==toy){
+if(abs(x-tox)<0.5&&abs(y-toy)<0.5){
+x=tox
+y=toy
 moving=0
 }
 

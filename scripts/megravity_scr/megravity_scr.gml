@@ -30,9 +30,18 @@ function megravity_scr() {
 	while (place_meeting(x+hsp+extsp,y-yplus,Solid)&&yplus<=2)yplus+=1;
 	if(place_meeting(x+hsp+extsp,y-yplus,Solid)){
 	while (!place_meeting(x+sign(hsp+extsp),y,Solid))x += sign(hsp+extsp);
+	var ledge_dir=sign(hsp+extsp)
 	hsp = 0
 	extsp=0
 	stopped=1
+	// QoL: Ledge assist - snap up when barely missing a ledge while falling
+	if(vsp>0){
+	for(var check=1;check<=3;check++){
+	if(!place_meeting(x+ledge_dir,y-check,Solid)&&!place_meeting(x,y-check,Solid)){
+	y-=check
+	stopped=0
+	break
+	}}}
 	if(slope>0){
 	slope-=1
 	}
@@ -46,6 +55,18 @@ function megravity_scr() {
 
 	x += hsp+extsp;
 
+	// QoL: Corner correction (upward only)
+	if(vsp<0&&place_meeting(x,y+vsp,Solid)){
+	for(var nudge=1;nudge<=corner_correction_range;nudge++){
+	if(!place_meeting(x+nudge,y+vsp,Solid)&&!place_meeting(x+nudge,y,Solid)){
+	x+=nudge
+	break
+	}
+	if(!place_meeting(x-nudge,y+vsp,Solid)&&!place_meeting(x-nudge,y,Solid)){
+	x-=nudge
+	break
+	}}}
+
 	//Vertical Collision
 	impact=0
 
@@ -57,7 +78,15 @@ function megravity_scr() {
 	vsp = 0
 	}
 	y += vsp;
-	if (vsp < 3) vsp += grav
+	if(vsp<4){
+	var grav_applied=grav
+	if(grounded==0&&abs(vsp)<apexthreshold&&!place_meeting(x+2.5,y,Solid)&&!place_meeting(x-2.5,y,Solid)){
+	grav_applied=grav*apexgravmult
+	}else if(vsp>0){
+	grav_applied=grav*fallgravmult
+	}
+	vsp+=grav_applied
+	}
 
 	grounding = instance_place(x,y+1,Solid)
 

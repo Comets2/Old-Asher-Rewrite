@@ -15,10 +15,18 @@ function charactercheck_scr() {
 	helmchoice=999
 	}}
 	}
+	if(Control.charArray[Control.charselected,8]==0||Control.charArray[Control.charselected,8]==1){
+	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
+	Control.helmskin=helm_spr_alt1
+	}else{
+	Control.helmskin=helm_spr
+	}
+	}else{
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
 	Control.helmskin=helm_spr
 	}else{
 	Control.helmskin=helm_spr_alt1
+	}
 	}
 
 

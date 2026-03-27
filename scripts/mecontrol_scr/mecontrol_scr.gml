@@ -26,6 +26,43 @@ function mecontrol_scr() {
 	key_down = Control.conp_h_down
 	}
 
+	// QoL: Coyote Time tracking
+	if(was_grounded==1&&grounded==0&&vsp>=0&&bjump==0){
+	coyotetime=6
+	}
+	if(coyotetime>0){
+	coyotetime-=1
+	}
+	was_grounded=grounded
+
+	// QoL: Jump Buffering
+	if(grounded==0&&(Control.con_p_space||Control.conp_p_space)){
+	if(!place_meeting(x+2.5,y,Solid)&&!place_meeting(x-2.5,y,Solid)){
+	jumpbuffer=8
+	}}
+	if(jumpbuffer>0){
+	jumpbuffer-=1
+	}
+
+	// QoL: Wall Jump Buffering
+	if(grounded==0&&(Control.con_p_space||Control.conp_p_space)){
+	if(!place_meeting(x+2.5,y,Solid)&&place_meeting(x+6,y,Solid)){
+	walljumpbuffer=6
+	walljumpbufferdir=1
+	}
+	if(!place_meeting(x-2.5,y,Solid)&&place_meeting(x-6,y,Solid)){
+	walljumpbuffer=6
+	walljumpbufferdir=-1
+	}}
+	if(walljumpbuffer>0){
+	walljumpbuffer-=1
+	}
+
+	// QoL: Slam Cancel timer
+	if(slamcancel_window>0){
+	slamcancel_window-=1
+	}
+
 	if(grounded==0&&Control.con_p_space&&Control.con_h_down||grounded==0&&Control.conp_p_space&&Control.conp_h_down){
 	if(vsp<2){
 	vsp=1.5
@@ -74,6 +111,8 @@ function mecontrol_scr() {
 	if(hit!=noone){
 	slamcd=0
 	animdel=0
+	slamcancel_window=5
+	doublejump=1
 	}}
 
 	if(grounded==1){
@@ -98,7 +137,30 @@ function mecontrol_scr() {
 
 	//Input reaction
 	if(stunned<=0){
-	hsp = (move * movespeed);
+	var hsp_target=move*movespeed
+	var accel,decel
+	if(grounded==1){
+	accel=ground_accel
+	decel=ground_decel
+	}else{
+	accel=air_accel
+	decel=air_decel
+	}
+	if(move!=0){
+	if(sign(hsp)!=sign(hsp_target)&&hsp!=0){
+	hsp-=sign(hsp)*decel
+	}else if(abs(hsp)<abs(hsp_target)){
+	hsp+=sign(hsp_target)*accel
+	if(abs(hsp)>abs(hsp_target)) hsp=hsp_target
+	}else{
+	hsp=hsp_target
+	}
+	}else{
+	if(abs(hsp)>decel){
+	hsp-=sign(hsp)*decel
+	}else{
+	hsp=0
+	}}
 	}
 
 	//Sprites
@@ -293,7 +355,7 @@ function mecontrol_scr() {
 	speed=0
 	}}
 	}
-	if(Control.con_p_space||Control.conp_p_space){
+	if(Control.con_p_space||Control.conp_p_space||(walljumpbuffer>0&&walljumpbufferdir==1)){
 	if(wallrtrig==0){
 	for(i=0;i<3;i+=1){
 	created=instance_create(x+10-2+i*2,y+20+1,Dummy_three_object)
@@ -319,7 +381,8 @@ function mecontrol_scr() {
 	wallltrig=0
 	moveaction=14
 	animdel=16
-	vsp=-2.9
+	vsp=-3.2
+	walljumpbuffer=0
 	}else{
 
 	}}}
@@ -349,7 +412,7 @@ function mecontrol_scr() {
 	speed=0
 	}}
 	}
-	if(Control.con_p_space||Control.conp_p_space){
+	if(Control.con_p_space||Control.conp_p_space||(walljumpbuffer>0&&walljumpbufferdir==-1)){
 	if(wallltrig==0){
 	for(i=0;i<3;i+=1){
 	created=instance_create(x+10-2+i*2,y+20+1,Dummy_three_object)
@@ -375,34 +438,45 @@ function mecontrol_scr() {
 	wallrtrig=0
 	moveaction=15
 	animdel=16
-	vsp=-2.75
+	vsp=-3.1
+	walljumpbuffer=0
 
 	}else{
 
 	}}}
 
 	//jump/ground
-	if(instance_place(x,y+1,Solid)&&stunned<=0){
+	var on_ground=instance_place(x,y+1,Solid)
+	if((on_ground||coyotetime>0)&&stunned<=0){
+	if(on_ground){
 	doublejump=1
 	if(vsp>=0){
 	grounded = 1
 	wallrtrig=0
 	wallltrig=0
 	jumptime=0
-	}
-	if(Control.con_p_space&&!instance_place(x,y-1,Solid)||Control.conp_p_space&&!instance_place(x,y-1,Solid)){
+	}}
+	var jump_pressed=(Control.con_p_space||Control.conp_p_space)
+	var jump_buffered=(jumpbuffer>0)
+	var slam_cancel=(slamcancel_window>0&&jump_pressed)
+	if((jump_pressed||jump_buffered||slam_cancel)&&!instance_place(x,y-1,Solid)){
 	bjump=1
+	coyotetime=0
+	jumpbuffer=0
+	slamcancel_window=0
 	if(!Control.con_h_down){
-	vsp=-1.65
+	vsp=-1.9
 	}else{
-	vsp=-1.25
+	vsp=-1.5
 	}
 	}}else{
 
 	//Double Jump
 	if(doublejump==1){
 	//if(!Control.con_h_down&&!Control.conp_h_down){
-	if(Control.con_p_space&&!instance_place(x,y-1,Solid)||Control.conp_p_space&&!instance_place(x,y-1,Solid)){
+	var djump_pressed=(Control.con_p_space||Control.conp_p_space)
+	var djump_buffered=(jumpbuffer>0)
+	if((djump_pressed||djump_buffered)&&!instance_place(x,y-1,Solid)){
 	if(!place_meeting(x+2.5,y,Solid)&&!place_meeting(x+2.5,y,Solid)||wallrtrig==0){
 	if(!place_meeting(x-2.5,y,Solid)&&!place_meeting(x-2.5,y,Solid)||wallltrig==0){
 	for(i=0;i<3;i+=1){
@@ -425,8 +499,9 @@ function mecontrol_scr() {
 	speed=0
 	}}
 	//bjump=1
-	vsp=-2.5
+	vsp=-2.85
 	doublejump=0
+	jumpbuffer=0
 	}}}}}
 	//}
 
@@ -441,13 +516,19 @@ function mecontrol_scr() {
 	if(Control.con_r_space||Control.conp_r_space){
 	jumptime=0
 	}
-	if(vsp<-2.3){
+	if(vsp<-2.65){
 	jumptime=0
-	vsp=-2.3
+	vsp=-2.65
 	}
 	}else{
 	jumptime=0
 	bjump=0
+	}}
+
+	// QoL: Short hop - cut upward velocity on early release
+	if(vsp<0&&grounded==0&&(Control.con_r_space||Control.conp_r_space)){
+	if(vsp<-1.0){
+	vsp*=0.5
 	}}
 
 	if(direction==0&&hsp==0&&grounded==1&&!Control.con_h_down&&!Control.con_h_up||direction==0&&hsp==0&&grounded==1&&!Control.conp_h_down&&!Control.conp_h_up){

@@ -10,6 +10,22 @@ function inven_scr(argument0) {
 	abilcreate_scr(charArray[charselected,8])
 
 
+	if(charArray[charselected,8]==0||charArray[charselected,8]==1){
+	if(maskArray[charArray[charselected,8],2]==0){
+	helmskin=helm_spr_alt1
+	}else{
+	if(maskArray[charArray[charselected,8],2]==1){
+	helmskin=helm_spr
+	}else{
+	if(maskArray[charArray[charselected,8],2]==2){
+	helmskin=helm_spr_alt2
+	}else{
+	if(maskArray[charArray[charselected,8],2]==3){
+	helmskin=helm_spr_alt2
+	}else{
+
+
+	}}}}}else{
 	if(maskArray[charArray[charselected,8],2]==0){
 	helmskin=helm_spr
 	}else{
@@ -24,7 +40,7 @@ function inven_scr(argument0) {
 	}else{
 
 
-	}}}}
+	}}}}}
 
 	statsArray[charArray[charselected,8],0]=maskArray[charArray[charselected,8],0]
 	for(i=1;i<6;i+=1){
@@ -41,21 +57,20 @@ function inven_scr(argument0) {
 	6 - wep
 	*/
 
-	//________________________________________________________________************<<{Miner}>>************________________________________________________________________
+	//________________________________________________________________************<<{Pumpkin}>>************________________________________________________________________
 	if(charArray[charselected,8]==0){
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
 	nohair=0
 	helmanimspr=0
-	//helmanimspr=miner_anim1_spr
-	maskcol=make_color_rgb(116,116,116)
-	abilpan=abilpan_bomb_spr
+	maskcol=make_color_rgb(213,153,51)
+	abilpan=abilpan_pump_spr
 	abilpancd=abilpancd_pump_spr
 	charEquip[charselected,1]=0
 	charEquip[charselected,2]=0
 	charEquip[charselected,3]=0
 	charEquip[charselected,4]=0
-	charEquip[charselected,5]=12
-	charEquip[charselected,6]=24
+	charEquip[charselected,5]=0
+	charEquip[charselected,6]=0
 	/*
 	Knight
 	charEquip[charselected,1]=0
@@ -79,19 +94,20 @@ function inven_scr(argument0) {
 	haircolor=make_color_rgb(101,78,35)
 	}}else{
 
-	//__________________________________________________<<{Pumpkin}>>__________________________________________________
+	//__________________________________________________<<{Miner}>>__________________________________________________
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==1){
 	nohair=0
 	helmanimspr=0
-	maskcol=make_color_rgb(213,153,51)
-	abilpan=abilpan_pump_spr
+	//helmanimspr=miner_anim1_spr
+	maskcol=make_color_rgb(116,116,116)
+	abilpan=abilpan_bomb_spr
 	abilpancd=abilpancd_pump_spr
 	charEquip[charselected,1]=0
 	charEquip[charselected,2]=0
 	charEquip[charselected,3]=0
 	charEquip[charselected,4]=0
-	charEquip[charselected,5]=0
-	charEquip[charselected,6]=0
+	charEquip[charselected,5]=12
+	charEquip[charselected,6]=24
 
 	with(Me){
 	skincolor=make_color_rgb(248,213,185)
@@ -107,13 +123,13 @@ function inven_scr(argument0) {
 	nohair=0
 	helmanimspr=0
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
-	//Wizard
-	maskcol=make_color_rgb(108,120,173)
-	abilpan=abilpan_wizard_spr
-	}else{
 	//Witch
 	maskcol=make_color_rgb(116,83,151)
 	abilpan=abilpan_witch_spr
+	}else{
+	//Wizard
+	maskcol=make_color_rgb(108,120,173)
+	abilpan=abilpan_wizard_spr
 	}
 	abilpancd=abilpancd_witch_spr
 	charEquip[charselected,1]=0

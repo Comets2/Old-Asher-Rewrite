@@ -12,6 +12,7 @@ function charselectperson_scr() {
 	if(pausesafetytwo==1){
 
 	with(Me){
+	image_speed=0.25
 	if(other.nohair<2){
 	draw_sprite_ext(heads_spr, other.charArray[other.i,0], x+other.drawspotx, y+other.drawspoty, image_xscale, image_yscale, image_angle, skincolor, image_alpha);
 	}else{

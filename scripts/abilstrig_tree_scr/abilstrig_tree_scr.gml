@@ -46,7 +46,7 @@ function abilstrig_tree_scr(argument0) {
 	chargetype=2
 	audio_play_sound_at(choose(snd_tree_abil1_tick1,snd_tree_abil1_tick2),x,y, 0, 90, 150, 0.5, false, 1) 
 	//CREATE LEAF
-	created=instance_create(x+choose(irandom_range(-2,2)),y+choose(irandom_range(-2,2)),Dummy_two_object)
+	created=instance_create(x+irandom_range(-2,2),y+irandom_range(-2,2),Dummy_two_object)
 	with(created){
 	creator=other.id
 	delay=200
@@ -135,7 +135,7 @@ function abilstrig_tree_scr(argument0) {
 	}}
 	if(chargetype==1){
 	//CREATE LEAF
-	created=instance_create(x+choose(irandom_range(-2,2)),y+3,Dummy_two_object)
+	created=instance_create(x+irandom_range(-2,2),y+3,Dummy_two_object)
 	with(created){
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
 	audio_play_sound_at(choose(snd_bossproj_tree_3,snd_bossproj_tree_4),x,y, 0, 90, 150, 0.5, false, 1) 

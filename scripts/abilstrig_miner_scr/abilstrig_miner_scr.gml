@@ -1,5 +1,5 @@
 function abilstrig_miner_scr(argument0) {
-	//-------------------------------------------------<<**********<<{Auto: BOMB}>>**********>>-------------------------------------------------
+	//-------------------------------------------------<<**********<<{Pumpkin E: BOMB}>>**********>>-------------------------------------------------
 	if(abil==0){
 	if(phase==0){
 	if(check==1){
@@ -9,24 +9,24 @@ function abilstrig_miner_scr(argument0) {
 	grav=0.0625
 	slope=0
 	if(option==0){
-	vsp=-1
-	hsp=0.9
+	vsp=-1.4
+	hsp=1.25
 	}else{
 	if(option==1){
-	vsp=1
-	hsp=1.3
+	vsp=1.4
+	hsp=1.8
 	}else{
 	if(option==2){
-	vsp=-1.875
-	hsp=0.5
+	vsp=-2.625
+	hsp=0.7
 	}}}
 
 	slope=0
 	stopped=0
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
-	sprite_index=abil_bomb11
-	}else{
 	sprite_index=abil_pump1
+	}else{
+	sprite_index=abil_bomb11
 	}
 	mask_index=abil_pump1
 	image_speed=0.1
@@ -45,13 +45,21 @@ function abilstrig_miner_scr(argument0) {
 
 	//------------------------------------{REGULAR}------------------------------------
 	gravity_scr()
+	if(grounded==1){
+	hsp*=0.988
+	if(abs(impact)>0.75){
+	vsp-=impact*0.75
+	hsp*=0.94
+	}}else{
+	hsp*=0.994
+	}
 	cdcheck+=1
 	image_angle+=hsp*-10
 	if(hsp>0){
-	hsp-=0.0025
+	hsp-=0.0015
 	}else{
 	if(hsp<0){
-	hsp+=0.0025
+	hsp+=0.0015
 	}}
 	if(hsp>0){
 	hspot=-2
@@ -90,9 +98,9 @@ function abilstrig_miner_scr(argument0) {
 	audio_play_sound_at(choose(pump_abil1_snd1,pump_abil1_snd2),x,y, 0, 90, 150, 0.5, false, 1)
 	}
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
-	sprite_index=abil_bomb1exp
-	}else{
 	sprite_index=abil_pump1exp
+	}else{
+	sprite_index=abil_bomb1exp
 	}
 	image_angle=0
 	mask_index=abil_bomb1_mask
@@ -156,9 +164,9 @@ function abilstrig_miner_scr(argument0) {
 	slope=0
 	stopped=0
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
-	sprite_index=abil_bomb21
-	}else{
 	sprite_index=abil_pump2
+	}else{
+	sprite_index=abil_bomb21
 	}
 	option=3
 	image_speed=0.1
@@ -244,10 +252,10 @@ function abilstrig_miner_scr(argument0) {
 	audio_play_sound_at(choose(pump_abil1_snd1,pump_abil1_snd2),x,y, 0, 90, 150, 0.5, false, 1)
 	}
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
+	sprite_index=abil_pump2exp
+	}else{
 	sprite_index=abil_bomb2exp
 	mask_index=abil_pump2exp
-	}else{
-	sprite_index=abil_pump2exp
 	}
 	phase=-2
 	}
@@ -286,9 +294,9 @@ function abilstrig_miner_scr(argument0) {
 	xtick=0
 	startx=x
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
-	sprite_index=abil_bomb32
-	}else{
 	sprite_index=abil_pump3
+	}else{
+	sprite_index=abil_bomb32
 	}
 	image_speed=0
 	image_index=1
@@ -342,9 +350,9 @@ function abilstrig_miner_scr(argument0) {
 	audio_play_sound_at(choose(pump_abil1_snd1,pump_abil1_snd2),x,y, 0, 90, 150, 0.5, false, 1)
 	}
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
-	sprite_index=abil_bomb3exp
-	}else{
 	sprite_index=abil_pump3exp
+	}else{
+	sprite_index=abil_bomb3exp
 	}
 	Control.screenshake=6
 	phase=-2

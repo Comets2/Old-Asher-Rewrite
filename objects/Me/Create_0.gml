@@ -85,3 +85,9 @@ haircolor=0
 
 attacking=0
 
+// Smooth camera
+cam_smooth = 0.1
+cam_x_float = x+10-__view_get(e__VW.WView,0)/2
+cam_y_float = y+10-__view_get(e__VW.HView,0)/2
+__view_set(e__VW.Object, 0, noone)
+

@@ -1,6 +1,6 @@
 ///First Variables
 function var_scr() {
-	grav = 0.1;
+	grav = 0.15;
 
 	hsp = 0;
 	vsp = 0;
@@ -65,6 +65,32 @@ function var_scr() {
 
 	charactercheck_scr()
 
+	// QoL: Coyote Time
+	coyotetime = 0
+	was_grounded = 0
 
+	// QoL: Jump Buffering
+	jumpbuffer = 0
+
+	// QoL: Wall Jump Buffering
+	walljumpbuffer = 0
+	walljumpbufferdir = 0
+
+	// QoL: Faster Falling / Apex Hang
+	fallgravmult = 1.4
+	apexgravmult = 0.6
+	apexthreshold = 0.5
+
+	// QoL: Acceleration Curves
+	ground_accel = 0.3
+	ground_decel = 0.4
+	air_accel = 0.2
+	air_decel = 0.15
+
+	// QoL: Corner Correction
+	corner_correction_range = 3
+
+	// QoL: Slam Cancel
+	slamcancel_window = 0
 
 }

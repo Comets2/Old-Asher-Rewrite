@@ -11,10 +11,10 @@ function abilstrig_wizard_scr(argument0) {
 	dir=1
 	}
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
-	startanimspr=abil_witch_dis1_alt1
+	startanimspr=abil_witch_dis1
 	}else{
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==1){
-	startanimspr=abil_witch_dis1
+	startanimspr=abil_witch_dis1_alt1
 	}else{
 	startanimspr=abil_witch_dis1_alt2
 	}}
@@ -44,10 +44,10 @@ function abilstrig_wizard_scr(argument0) {
 	grav=0
 	image_speed=0.15
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
-	sprite_index=abil_witch1_alt1
+	sprite_index=abil_witch1
 	}else{
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==1){
-	sprite_index=abil_witch1
+	sprite_index=abil_witch1_alt1
 	}else{
 	sprite_index=abil_witch1_alt2
 	}}}
@@ -71,10 +71,10 @@ function abilstrig_wizard_scr(argument0) {
 	pin=555
 	depth=5
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
-	sprite_index=abil_witch_part1_alt1
+	sprite_index=abil_witch_part1
 	}else{
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==1){
-	sprite_index=abil_witch_part1
+	sprite_index=abil_witch_part1_alt1
 	}}
 	image_speed=0
 	image_index=(irandom(image_number)/2)*2
@@ -120,10 +120,10 @@ function abilstrig_wizard_scr(argument0) {
 	image_speed=0.15
 	visible=false
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
-	//sprite_index=abil_witch_dis1_alt1
+	//sprite_index=abil_witch_dis1
 	}else{
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==1){
-	//sprite_index=abil_witch_dis1
+	//sprite_index=abil_witch_dis1_alt1
 	}else{
 	sprite_index=abil_witch_dis1_alt2
 	}}
@@ -162,9 +162,9 @@ function abilstrig_wizard_scr(argument0) {
 	sprite_index=abil_witch2_alt2
 	}}
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
-	image_index=0
-	}else{
 	image_index=1
+	}else{
+	image_index=0
 	}
 	image_speed=0
 	creator.nowep=1
@@ -192,10 +192,10 @@ function abilstrig_wizard_scr(argument0) {
 	pin=555
 	depth=5
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
-	sprite_index=abil_witch_part1_alt1
+	sprite_index=abil_witch_part1
 	}else{
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==1){
-	sprite_index=abil_witch_part1
+	sprite_index=abil_witch_part1_alt1
 	}}
 	image_speed=0.05
 	image_index=(irandom(image_number)/2)*2
@@ -364,10 +364,10 @@ function abilstrig_wizard_scr(argument0) {
 	}
 
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
-	startanimspr=abil_witch_dis1_alt1
+	startanimspr=abil_witch_dis1
 	}else{
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==1){
-	startanimspr=abil_witch_dis1
+	startanimspr=abil_witch_dis1_alt1
 	}else{
 	startanimspr=abil_witch_dis1_alt2
 	}}
@@ -390,10 +390,10 @@ function abilstrig_wizard_scr(argument0) {
 	grav=0
 	image_speed=0.25
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
-	sprite_index=abil_witch3_alt1
+	sprite_index=abil_witch3
 	}else{
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==1){
-	sprite_index=abil_witch3
+	sprite_index=abil_witch3_alt1
 	}else{
 	sprite_index=abil_witch3_alt2
 	}}}
@@ -441,10 +441,10 @@ function abilstrig_wizard_scr(argument0) {
 	image_index=0
 	image_speed=0.15
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
-	sprite_index=abil_witch_dis1_alt1
+	sprite_index=abil_witch_dis1
 	}else{
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==1){
-	sprite_index=abil_witch_dis1
+	sprite_index=abil_witch_dis1_alt1
 	}else{
 	sprite_index=abil_witch_dis1_alt2
 	}}

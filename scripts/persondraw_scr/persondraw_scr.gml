@@ -5,6 +5,23 @@ function persondraw_scr() {
 	extrax=20
 	}
 	with(Control){
+	if(charArray[charselected,8]==0||charArray[charselected,8]==1){
+	if(maskArray[charArray[charselected,8],2]==0){
+	helmskin=helm_spr_alt1
+	}else{
+	if(maskArray[charArray[charselected,8],2]==1){
+	helmskin=helm_spr
+	}else{
+	if(maskArray[charArray[charselected,8],2]==2){
+	helmskin=helm_spr_alt2
+	}else{
+	if(maskArray[charArray[charselected,8],2]==3){
+	helmskin=helm_spr_alt2
+	}else{
+
+
+	}}}}
+	}else{
 	if(maskArray[charArray[charselected,8],2]==0){
 	helmskin=helm_spr
 	}else{
@@ -19,7 +36,7 @@ function persondraw_scr() {
 	}else{
 
 
-	}}}}
+	}}}}}
 	}
 
 	if(hurt<=0){
