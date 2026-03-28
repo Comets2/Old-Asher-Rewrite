@@ -36,7 +36,7 @@ keep=1
 sprite_index=items_spr
 pull=10
 image_index=2
-image_speed=0.15
+image_speed=0.075
 hp=1
 imagenum=2
 tick=0
@@ -187,6 +187,7 @@ audio_play_sound(snd1,8,false)
 instance_destroy()
 }
 if(x-(Me.x+8)<=pull&&x-(Me.x+8)>=-pull&&y-(Me.y+12)<=pull&&y-(Me.y+12)>=-pull){
+if(itemtype!=2||instance_place(x,y,Solid)){
 if(x<Me.x+8){
 hsp=0.3
 }else{
@@ -197,6 +198,9 @@ if(y<Me.y+12){
 vsp=0.3
 }else{
 vsp=-0.3
+}
+x+=hsp
+y+=vsp
 }}else{
 if(hsp>0){
 hsp-=0.0025

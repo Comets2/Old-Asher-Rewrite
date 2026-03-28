@@ -66,7 +66,7 @@ image_index=0
 }}}}
 
 if(nograv==0){
-if(!place_meeting(x,y+1,Solid)){
+if(!place_meeting(x,y+1,Solid)&&!place_meeting(x,y+1,Container)){
 y+=1
 }}
 
