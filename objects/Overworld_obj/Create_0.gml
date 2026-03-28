@@ -67,5 +67,10 @@ animdraw5=0
 animdraw6=0
 animdraw7=0
 animdraw8=0
+cloud_surf1=-1
+cloud_surf2=-1
+cloud_surf3=-1
+cloud_surf4=-1
+cloud_surf5=-1
 delay=0
 

@@ -260,6 +260,7 @@ function forestenemy_3_scr() {
 	endingx=2719
 	endingy=309
 	extragold=25
+	extraxp=11
 
 	with(Control){
 	rmcheck=1

@@ -22,7 +22,9 @@ function pauseoption_scr(argument0) {
 	itemselected=0
 	}else{
 	if(option==4){
-	pause=3
+	pause=9
+	settings_tab=0
+	settings_row=-1
 	}else{
 	if(option==5){
 	charsave_scr(charselected)

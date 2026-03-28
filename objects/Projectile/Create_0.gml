@@ -1,6 +1,7 @@
 direction=Me.direction
 saveslowamount=0
 useaudio=0
+spellsnd=-1
 audiosize=90
 deathphase=0
 enemyhit=0

@@ -164,6 +164,7 @@ function worldtwo_rm2_enemy_scr() {
 	endingx=8080
 	endingy=224-16
 	extragold=40
+	extraxp=17
 
 	with(Control){
 	rmcheck=1

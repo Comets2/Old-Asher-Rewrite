@@ -92,6 +92,37 @@ colrare3 = make_color_rgb(83,83,227)
 colrare4 = make_color_rgb(157,83,225)
 colrare5 = make_color_rgb(225,150,83)
 
+//UI Style Colors
+ui_hurtcolor = $5959BB
+poisoncolor = $A86984
+pathcolor = $332F55
+ui_border = $2C1E37
+ui_btn_outline = $6384A9
+ui_btn_outline_sel = $433058
+pathcolortwo = $4E6089
+colorgold = $78A5D1
+colorgoldmed = $5E7EC4
+colorgoldlight = $8EDDCA
+colorblue = $A8945E
+colorbluelight = $D8DEBC
+colorgreen = $72C074
+colorpurple = $A86984
+colorpurpledark = $75495F
+colorgray = $B3ABC2
+colorred = $5959BB
+colorbrown = $3F4169
+colorlightgreen = $8EDDCA
+
+//Settings
+settings_tab = 0
+settings_row = -1
+master_vol = 1
+music_vol = 1
+sfx_vol = 1
+window_mode = 1
+window_scale = 4
+settings_apply_window()
+
 draw_set_font(global.myFont) 
 draw_set_color(global.myCol) 
 
@@ -136,8 +167,18 @@ animdraw2=0
 animdraw3=0
 animdraw4=0
 animdraw5=0
+cloud_surf1=-1
+cloud_surf2=-1
+cloud_surf3=-1
+cloud_surf4=-1
+cloud_surf5=-1
 regularview=0
 regularview=0
+bg_layer0=-1
+bg_layer1=-1
+bg_layer2=-1
+bg_layer5=-1
+bg_cached_room=-1
 
 enemytarget=0
 enemytargettwo=0

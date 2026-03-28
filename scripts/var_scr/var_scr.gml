@@ -90,6 +90,9 @@ function var_scr() {
 	// QoL: Corner Correction
 	corner_correction_range = 3
 
+	// QoL: Wall Jump Kick
+	walljump_hsp = 1.8
+
 	// QoL: Slam Cancel
 	slamcancel_window = 0
 

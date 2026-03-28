@@ -68,15 +68,15 @@ combo=0
 }
 megravity_scr()
 
-// Smooth camera follow (lerp on float, round when setting to prevent sub-pixel jitter)
+// Smooth camera follow
 var view_w=__view_get(e__VW.WView,0)
 var view_h=__view_get(e__VW.HView,0)
 var target_x=clamp(x+10-view_w/2,0,room_width-view_w)
 var target_y=clamp(y+10-view_h/2,0,room_height-view_h)
 cam_x_float=lerp(cam_x_float,target_x,cam_smooth)
 cam_y_float=lerp(cam_y_float,target_y,cam_smooth)
-__view_set(e__VW.XView,0,round(cam_x_float))
-__view_set(e__VW.YView,0,round(cam_y_float))
+__view_set(e__VW.XView,0,cam_x_float)
+__view_set(e__VW.YView,0,cam_y_float)
 
 //Abils
 for(i=0;i<3;i+=1){

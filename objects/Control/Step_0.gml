@@ -1,3 +1,14 @@
+// Instance deactivation: only keep Solid-family objects active near the view
+if(room!=Overworld_rm&&room!=room4){
+var _vx=__view_get( e__VW.XView, 0 )
+var _vy=__view_get( e__VW.YView, 0 )
+var _vw=__view_get( e__VW.WView, 0 )
+var _vh=__view_get( e__VW.HView, 0 )
+var _pad=300
+instance_deactivate_object(Solid)
+instance_activate_region(_vx-_pad,_vy-_pad,_vw+_pad*2,_vh+_pad*2,true)
+}
+
 if(delay>0){
 delay-=1
 }
@@ -406,7 +417,7 @@ speed=0
 }}}}
 }
 }else{
-if(pause!=4&&pause!=3){
+if(pause!=4&&pause!=3&&pause!=9){
 
 if(con_p_right||conp_p_right){
 optiontwo+=1
@@ -484,6 +495,131 @@ if(con_p_enter||con_p_e||con_p_w||con_p_escape||conp_p_escape||conp_p_enter||con
 pause=1
 option=0
 }}else{
+if(pause==9){
+//SETTINGS
+if(delay<=0){
+if(con_p_escape||con_p_w||conp_p_escape||conp_p_q){
+delay=10
+pause=1
+option=0
+}
+//Up
+if(con_p_up||conp_p_up){
+settings_row-=1
+if(settings_row<-1) settings_row=-1
+}
+//Down
+if(con_p_down||conp_p_down){
+if(settings_row==-1){
+settings_row=0
+}else{
+if(settings_tab==0){
+if(settings_row<2) settings_row+=1
+}
+if(settings_tab==2){
+var _gfx_max=0
+if(window_mode==2) _gfx_max=1
+if(settings_row<_gfx_max) settings_row+=1
+}
+}
+}
+//Left/Right
+if(con_p_left||conp_p_left){
+if(settings_row==-1){
+if(settings_tab>0) settings_tab-=1
+}else{
+if(settings_tab==0){
+if(settings_row==0) master_vol=max(0,master_vol-0.05)
+if(settings_row==1) music_vol=max(0,music_vol-0.05)
+if(settings_row==2) sfx_vol=max(0,sfx_vol-0.05)
+audio_master_gain(master_vol)
+}
+if(settings_tab==2){
+if(settings_row==0){
+window_mode=max(0,window_mode-1)
+if(window_mode!=2&&settings_row>0) settings_row=0
+settings_apply_window()
+}
+if(settings_row==1) { window_scale=max(2,window_scale-1); settings_apply_window() }
+}
+}
+}
+if(con_p_right||conp_p_right){
+if(settings_row==-1){
+if(settings_tab<3) settings_tab+=1
+}else{
+if(settings_tab==0){
+if(settings_row==0) master_vol=min(1,master_vol+0.05)
+if(settings_row==1) music_vol=min(1,music_vol+0.05)
+if(settings_row==2) sfx_vol=min(1,sfx_vol+0.05)
+audio_master_gain(master_vol)
+}
+if(settings_tab==2){
+if(settings_row==0){
+window_mode=min(2,window_mode+1)
+if(window_mode!=2&&settings_row>0) settings_row=0
+settings_apply_window()
+}
+if(settings_row==1) { window_scale=min(8,window_scale+1); settings_apply_window() }
+}
+}
+}
+//Shoulder buttons for tabs
+if(conp_p_shl||conp_p_shr){
+if(conp_p_shl&&settings_tab>0) settings_tab-=1
+if(conp_p_shr&&settings_tab<3) settings_tab+=1
+settings_row=-1
+}
+}
+//Mouse support
+var _vx=__view_get(e__VW.XView, 0)
+var _vy=__view_get(e__VW.YView, 0)
+var _mx=mouse_x
+var _my=mouse_y
+//Click tabs
+if(mouse_check_button_pressed(mb_left)){
+for(var _t=0;_t<4;_t++){
+var _tx1=_vx+12+_t*58
+var _tx2=_tx1+56
+if(_mx>=_tx1&&_mx<=_tx2&&_my>=_vy+20&&_my<=_vy+32){
+settings_tab=_t
+settings_row=-1
+}}
+//Click content rows
+if(settings_tab==0){
+for(var _r=0;_r<3;_r++){
+var _ry1=_vy+39+_r*32
+var _ry2=_ry1+28
+if(_mx>=_vx+14&&_mx<=_vx+241&&_my>=_ry1&&_my<=_ry2){
+settings_row=_r
+}}}
+if(settings_tab==2){
+var _gfx_rows=1
+if(window_mode==2) _gfx_rows=2
+for(var _r=0;_r<_gfx_rows;_r++){
+var _ry1=_vy+39+_r*32
+var _ry2=_ry1+28
+if(_mx>=_vx+14&&_mx<=_vx+241&&_my>=_ry1&&_my<=_ry2){
+settings_row=_r
+}}}
+}
+//Drag sliders
+if(mouse_check_button(mb_left)&&settings_tab==0){
+for(var _r=0;_r<3;_r++){
+var _ry1=_vy+39+_r*32
+var _ry2=_ry1+28
+var _sx1=_vx+144
+var _sx2=_vx+209
+if(_mx>=_sx1&&_mx<=_sx2&&_my>=_ry1+9&&_my<=_ry2-9){
+settings_row=_r
+var _nv=clamp((_mx-_sx1-1)/(_sx2-_sx1-2),0,1)
+_nv=round(_nv*20)/20
+if(_r==0) master_vol=_nv
+if(_r==1) music_vol=_nv
+if(_r==2) sfx_vol=_nv
+audio_master_gain(master_vol)
+}}}
+}
 }
 
 }}
@@ -533,10 +669,23 @@ audio_stop_sound(music)
 if(regularview==0){
 //Background
 if(room!=Worldtwo_rm6_boss){
-__background_set( e__BG.X, 0, __view_get( e__VW.XView, 0 )/1.5 )
-__background_set( e__BG.X, 1, __view_get( e__VW.XView, 0 )/2 )
-__background_set( e__BG.X, 2, __view_get( e__VW.XView, 0 )/3 )
-__background_set( e__BG.X, 5, __view_get( e__VW.XView, 0 )/7 )
+// Cache background layer IDs once per room, use direct layer_x after
+if(bg_cached_room!=room){
+var _info0=__background_get_element(0)
+var _info1=__background_get_element(1)
+var _info2=__background_get_element(2)
+var _info5=__background_get_element(5)
+bg_layer0=_info0[1]
+bg_layer1=_info1[1]
+bg_layer2=_info2[1]
+bg_layer5=_info5[1]
+bg_cached_room=room
+}
+var _vx=__view_get( e__VW.XView, 0 )
+if(bg_layer0!=-1){ layer_x(bg_layer0,_vx/1.5); layer_y(bg_layer0,0) }
+if(bg_layer1!=-1){ layer_x(bg_layer1,_vx/2); layer_y(bg_layer1,2) }
+if(bg_layer2!=-1){ layer_x(bg_layer2,_vx/3); layer_y(bg_layer2,4) }
+if(bg_layer5!=-1){ layer_x(bg_layer5,_vx/7); layer_y(bg_layer5,6) }
 }}
 
 //Level

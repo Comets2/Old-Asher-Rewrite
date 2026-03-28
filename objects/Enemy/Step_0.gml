@@ -2,59 +2,27 @@ if(point_distance(Me.x+10,Me.y+10,x+sprite_width/2,y+sprite_height/2)<merange){
 if(Control.pause==0&&Control.arcadepause==0){
 inrange=1
 if(hp>0||undie==1){
-//Code Run
+// Determine AI script once, then reuse every frame
+if(!ai_set){
+ai_set=true
 if(Control.world==1){
-if(room==Forest_rm3){
-forestenemy_3_scr()
-}else{
-if(room==Forest_rm1){
-forestenemy_1_scr()
-}else{
-if(room==Forest_snow_rm2){
-forestenemy_snow_scr()
-}else{
-if(room==Forest_rm4){
-forestenemy_4_scr()
-}else{
-if(room==Birthday_rm1){
-worldone_rm5_enemy_scr()
-}else{
-if(enemytype==2){
-skullenemy_scr()
-}else{
-if(enemytype==3){
-gravity_scr()
-encontrol_scr()
-}else{
-if(enemytype==4){
-
-}else{
-if(enemytype==5){
-
-}else{
-if(enemytype==6){
-
-}
-}}}}}}}
-}}
+if(room==Forest_rm3) ai_script=forestenemy_3_scr
+else if(room==Forest_rm1) ai_script=forestenemy_1_scr
+else if(room==Forest_snow_rm2) ai_script=forestenemy_snow_scr
+else if(room==Forest_rm4) ai_script=forestenemy_4_scr
+else if(room==Birthday_rm1) ai_script=worldone_rm5_enemy_scr
+else if(enemytype==2) ai_script=skullenemy_scr
+else if(enemytype==3){ ai_script=gravity_scr; ai_script2=encontrol_scr }
 }else{
 if(Control.world==2){
-if(room==Worldtwo_rm1){
-worldtwo_rm1_enemy_scr()
-}else{
-if(room==Worldtwo_rm2){
-worldtwo_rm2_enemy_scr()
-}else{
-if(room==Worldtwo_rm1_part2){
-worldtwo_rm1_enemy_scr()
-}else{
-if(room==Worldtwo_rm3){
-worldtwo_rm3_enemy_scr()
-}else{
-if(room==Worldtwo_rm6_boss){
-worldtwo_boss_enemy_scr()
+if(room==Worldtwo_rm1||room==Worldtwo_rm1_part2) ai_script=worldtwo_rm1_enemy_scr
+else if(room==Worldtwo_rm2) ai_script=worldtwo_rm2_enemy_scr
+else if(room==Worldtwo_rm3) ai_script=worldtwo_rm3_enemy_scr
+else if(room==Worldtwo_rm6_boss) ai_script=worldtwo_boss_enemy_scr
+}}
 }
-}}}}}}
+if(ai_script!=-1) script_execute(ai_script)
+if(ai_script2!=-1) script_execute(ai_script2)
 }
 
 //All
@@ -130,7 +98,11 @@ Control.rolldisplaytime=30
 Control.rolldisplayimage=2
 }
 for(i=0;i<extraxp;i+=1){
+if(ending==1){
+created=instance_create(x+8-12+random(24),y+6-12+random(16),Item)
+}else{
 created=instance_create(x+6+random(4),y+6-2+random(4),Item)
+}
 created.itemtype=1
 }
 //gold loot

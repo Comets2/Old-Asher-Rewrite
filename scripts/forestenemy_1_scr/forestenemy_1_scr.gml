@@ -162,6 +162,7 @@ function forestenemy_1_scr() {
 	endingx=5811
 	endingy=209
 	extragold=20
+	extraxp=9
 
 	sprite_index=beequeen_spr
 	xmid=sprite_width/2

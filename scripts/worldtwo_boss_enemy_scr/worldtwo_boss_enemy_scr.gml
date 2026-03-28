@@ -26,6 +26,7 @@ function worldtwo_boss_enemy_scr() {
 	endingx=512
 	endingy=222-16
 	extragold=100
+	extraxp=39
 	}
 
 	if(option==-1){

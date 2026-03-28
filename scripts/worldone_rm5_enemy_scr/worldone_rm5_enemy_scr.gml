@@ -484,6 +484,7 @@ function worldone_rm5_enemy_scr() {
 	endingx=9839
 	endingy=160
 	extragold=25
+	extraxp=11
 
 	delay=0
 	blocktimes=0

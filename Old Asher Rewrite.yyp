@@ -364,6 +364,8 @@
     {"id":{"name":"draw_set_blend_mode","path":"scripts/draw_set_blend_mode/draw_set_blend_mode.yy",},},
     {"id":{"name":"drawcontrols_scr","path":"scripts/drawcontrols_scr/drawcontrols_scr.yy",},},
     {"id":{"name":"drawforme_scr","path":"scripts/drawforme_scr/drawforme_scr.yy",},},
+    {"id":{"name":"ui_draw_scr","path":"scripts/ui_draw_scr/ui_draw_scr.yy",},},
+    {"id":{"name":"settings_draw_scr","path":"scripts/settings_draw_scr/settings_draw_scr.yy",},},
     {"id":{"name":"encontrol_scr","path":"scripts/encontrol_scr/encontrol_scr.yy",},},
     {"id":{"name":"enledge_scr","path":"scripts/enledge_scr/enledge_scr.yy",},},
     {"id":{"name":"envar_scr","path":"scripts/envar_scr/envar_scr.yy",},},

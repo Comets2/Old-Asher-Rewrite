@@ -1,11 +1,5 @@
 if(room!=room4&&dead==0){
 
-// Round position for drawing to prevent sub-pixel jitter
-var _real_x=x
-var _real_y=y
-x=round(x)
-y=round(y)
-
 if(direction==0){
 drawflip=1
 }else{
@@ -33,10 +27,6 @@ draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_ang
 }
 
 statusdraw_scr()
-
-// Restore real position
-x=_real_x
-y=_real_y
 }
 //draw_sprite(title_spr,0,view_xview[0]+50,view_yview[0]+50)
 //draw_text(x,y-10,Control.charArray[Control.charselected,3])

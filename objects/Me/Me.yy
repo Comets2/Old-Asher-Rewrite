@@ -39,5 +39,5 @@
     "path":"sprites/me_w_knight/me_w_knight.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

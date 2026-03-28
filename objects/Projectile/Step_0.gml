@@ -55,6 +55,7 @@ audio_emitter_falloff(spellsnd, audiosize, 300, 1);
 if(deathphase==1){
 if(useaudio==1){
 audio_emitter_free(spellsnd)
+spellsnd=-1
 }
 if(selfcreated!=0){
 if(instance_exists(selfcreated)){

@@ -331,6 +331,7 @@ function mecontrol_scr() {
 	}}
 
 	//Wallslide
+	walljumped=0
 	if(place_meeting(x+2.5,y,Solid)&&!Control.con_h_down&&grounded==0||place_meeting(x+2.5,y,Solid)&&!Control.conp_h_down&&grounded==0){
 	if(vsp>1){
 	vsp-=0.1875
@@ -355,6 +356,7 @@ function mecontrol_scr() {
 	speed=0
 	}}
 	}
+	// Wall jump: press jump while on wall
 	if(Control.con_p_space||Control.conp_p_space||(walljumpbuffer>0&&walljumpbufferdir==1)){
 	if(wallrtrig==0){
 	for(i=0;i<3;i+=1){
@@ -365,7 +367,6 @@ function mecontrol_scr() {
 	creator=other.id
 	sprite_index=me_part1_spr
 	depth=Me.depth-1
-
 	image_speed=1
 	image_index=irandom(image_number)
 	duration=8+irandom(12)
@@ -376,13 +377,15 @@ function mecontrol_scr() {
 	vsp=vspeed
 	speed=0
 	}}
-
 	wallrtrig=1
 	wallltrig=0
 	moveaction=14
 	animdel=16
-	vsp=-3.2
 	walljumpbuffer=0
+	jumpbuffer=0
+	vsp=-3.2
+	doublejump=1
+	walljumped=1
 	}else{
 
 	}}}
@@ -412,6 +415,7 @@ function mecontrol_scr() {
 	speed=0
 	}}
 	}
+	// Wall jump: press jump while on wall
 	if(Control.con_p_space||Control.conp_p_space||(walljumpbuffer>0&&walljumpbufferdir==-1)){
 	if(wallltrig==0){
 	for(i=0;i<3;i+=1){
@@ -422,7 +426,6 @@ function mecontrol_scr() {
 	creator=other.id
 	sprite_index=me_part1_spr
 	depth=Me.depth-1
-
 	image_speed=0
 	image_index=irandom(image_number)
 	duration=8+irandom(12)
@@ -433,14 +436,15 @@ function mecontrol_scr() {
 	vsp=vspeed
 	speed=0
 	}}
-
 	wallltrig=1
 	wallrtrig=0
 	moveaction=15
 	animdel=16
-	vsp=-3.1
 	walljumpbuffer=0
-
+	jumpbuffer=0
+	vsp=-3.1
+	doublejump=1
+	walljumped=1
 	}else{
 
 	}}}
@@ -472,13 +476,13 @@ function mecontrol_scr() {
 	}}else{
 
 	//Double Jump
-	if(doublejump==1){
+	if(doublejump==1&&walljumped==0){
 	//if(!Control.con_h_down&&!Control.conp_h_down){
 	var djump_pressed=(Control.con_p_space||Control.conp_p_space)
 	var djump_buffered=(jumpbuffer>0)
 	if((djump_pressed||djump_buffered)&&!instance_place(x,y-1,Solid)){
-	if(!place_meeting(x+2.5,y,Solid)&&!place_meeting(x+2.5,y,Solid)||wallrtrig==0){
-	if(!place_meeting(x-2.5,y,Solid)&&!place_meeting(x-2.5,y,Solid)||wallltrig==0){
+	if(!place_meeting(x+2.5,y,Solid)||wallrtrig==1){
+	if(!place_meeting(x-2.5,y,Solid)||wallltrig==1){
 	for(i=0;i<3;i+=1){
 	created=instance_create(x+10-2+i*2,y+20+1,Dummy_three_object)
 	with(created){

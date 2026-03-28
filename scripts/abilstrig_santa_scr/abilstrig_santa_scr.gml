@@ -3,6 +3,7 @@ function abilstrig_santa_scr(argument0) {
 	if(abil==0){
 	if(check==1){
 	check=0
+	y-=1
 	Me.abilopt-=1
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
 	sprite_index=abil_santa_present
@@ -18,7 +19,7 @@ function abilstrig_santa_scr(argument0) {
 	}else{
 	hsp=-1.25
 	}
-	vsp=-0.6
+	vsp=-0.45
 	if(option==1){
 	vsp=0.15
 	}else{
@@ -101,11 +102,11 @@ function abilstrig_santa_scr(argument0) {
 	}
 
 
-	for(i=0;i<18;i+=1){
+	for(i=0;i<12;i+=1){
 	created=instance_create(x,y,Dummy_two_object)
 	with(created){
 	diddmg=0
-	direction=other.i*20
+	direction=other.i*30
 	pin=50
 	depth=4
 
@@ -211,7 +212,7 @@ function abilstrig_santa_scr(argument0) {
 	motiontick=1
 	}}}
 
-	for(i=0;i<2;i+=1){
+	if(irandom(1)==0){
 	created=instance_create(x+(random_range(-5,5)),y+(random_range(-5,5)),Dummy_two_object)
 	with(created){
 	diddmg=0

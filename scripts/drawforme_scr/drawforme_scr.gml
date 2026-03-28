@@ -146,6 +146,10 @@ function drawforme_scr() {
 	xpos+=12
 	}}
 
+	if(charArray[charselected,8]==7){
+	draw_text_ext_transformed(__view_get( e__VW.XView, 0 )+__view_get( e__VW.WView, 0 )/2-16,__view_get( e__VW.YView, 0 )+__view_get( e__VW.HView, 0 )+ypos-6,string(max(0,Me.abilopt-1)),1,100,0.5,0.5,0)
+	}
+
 	if(Me.combo>2){
 	if(Me.combodraw>0){
 	draw_text_ext_transformed_colour(x+8,y-8,string_hash_to_newline(floor(Me.combo/3)),1,1,100,0.5,0.5,0,c_black,c_black,c_black,c_black)

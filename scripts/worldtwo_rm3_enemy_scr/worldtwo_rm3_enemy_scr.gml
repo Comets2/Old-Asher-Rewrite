@@ -248,6 +248,7 @@ function worldtwo_rm3_enemy_scr() {
 	endingx=1294
 	endingy=607-16
 	extragold=50
+	extraxp=19
 
 	sprite_index=boss_ghost_spr
 	mask_index=sprite_index

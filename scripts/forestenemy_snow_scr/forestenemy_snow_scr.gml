@@ -167,6 +167,7 @@ function forestenemy_snow_scr() {
 	endingx=1730
 	endingy=470
 	extragold=25
+	extraxp=11
 
 	Control.enemytarget=id
 	name="Frost Beast"

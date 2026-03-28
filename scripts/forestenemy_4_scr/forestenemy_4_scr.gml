@@ -158,6 +158,7 @@ function forestenemy_4_scr() {
 	endingx=1360-8
 	endingy=209
 	extragold=50
+	extraxp=19
 
 	Control.enemytarget=id
 	name="Elder Tree"

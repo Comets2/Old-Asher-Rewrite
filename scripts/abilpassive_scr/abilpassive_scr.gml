@@ -1058,29 +1058,33 @@ function abilpassive_scr(argument0) {
 	//ALWAYS
 	if(abilpassive>1){
 
-	if(abilopt<4&&abilopt>1){
+	if(abilopt<4&&abilopt>=1){
 	if(abilregen>0){
 	abilregen-=1
 	}else{
 	abilopt+=1
-	abilregen=80
+	abilregen=120
 	}}
 
-	if(abilopt==1){
-	abilopt=0
-	Control.charcdArray[Me.charid,0]=180
+	if(abilopt>=2){
+	Control.charcdArray[Me.charid,0]=0
 	}else{
 	if(abilopt<=0){
 	if(Control.charcdArray[Me.charid,0]<=0){
 	abilopt=4
+	abilregen=120
 	}}else{
-	Control.charcdArray[Me.charid,0]=0
+	if(abilopt==1){
+	abilopt=0
+	Control.charcdArray[Me.charid,0]=200
 	}}
+	}
 
 
 	with(Dummy_two_object){
 	//Present confetti
 	if(pin==50){
+	vsp+=0.015
 	x+=hsp
 	y+=vsp
 	if(duration>0){
