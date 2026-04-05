@@ -6,7 +6,7 @@ function abilstrig_robot_scr(argument0) {
 	check=0
 	mask_index=abil_robo_imgmask_spr
 	counter=0
-	audio_play_sound(snd_yeti_icehit_2, 8, false) 
+	sfx_play(snd_yeti_icehit_2, 8, false) 
 	type=1
 	imgsave=-1
 	modamount=-1
@@ -29,12 +29,12 @@ function abilstrig_robot_scr(argument0) {
 	if(counter<60){
 	type=2
 	if(counter==30){
-	audio_play_sound(snd_yeti_icehit_2, 8, false) 
+	sfx_play(snd_yeti_icehit_2, 8, false) 
 	}
 	}else{
 	type=3
 	if(counter==60){
-	audio_play_sound(snd_yeti_icehit_1, 8, false) 
+	sfx_play(snd_yeti_icehit_1, 8, false) 
 	}
 	}}
 	if(!Control.con_h_e&&!Control.conp_h_e){
@@ -62,7 +62,7 @@ function abilstrig_robot_scr(argument0) {
 	}}
 	image_speed=0
 	image_index=irandom(image_number)
-	duration=irandom(4)+other.type*2
+	duration=irandom(3)+other.type*1
 	durationtotal=duration
 	move_towards_point(other.x,other.y,0.25)
 	hsp=hspeed
@@ -95,12 +95,12 @@ function abilstrig_robot_scr(argument0) {
 	}
 	spellsnd=audio_emitter_create()
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
-	audio_play_sound_on(spellsnd,snd_robot_plasmashot1,false,8) 
+	sfx_play_on(spellsnd,snd_robot_plasmashot1,false,8) 
 	}else{
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==1){
-	audio_play_sound_on(spellsnd,snd_robot_plasmashot1_alt1,false,8) 
+	sfx_play_on(spellsnd,snd_robot_plasmashot1_alt1,false,8) 
 	}else{
-	audio_play_sound_on(spellsnd,snd_robot_plasmashot1,false,8) 
+	sfx_play_on(spellsnd,snd_robot_plasmashot1,false,8) 
 	}}
 	}else{
 	if(type==2){
@@ -114,12 +114,12 @@ function abilstrig_robot_scr(argument0) {
 	}
 	spellsnd=audio_emitter_create()
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
-	audio_play_sound_on(spellsnd,snd_robot_plasmashot2,false,8) 
+	sfx_play_on(spellsnd,snd_robot_plasmashot2,false,8) 
 	}else{
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==1){
-	audio_play_sound_on(spellsnd,snd_robot_plasmashot2_alt1,false,8) 
+	sfx_play_on(spellsnd,snd_robot_plasmashot2_alt1,false,8) 
 	}else{
-	audio_play_sound_on(spellsnd,snd_robot_plasmashot2,false,8) 
+	sfx_play_on(spellsnd,snd_robot_plasmashot2,false,8) 
 	}}
 	}else{
 	if(type==3){
@@ -133,12 +133,12 @@ function abilstrig_robot_scr(argument0) {
 	}
 	spellsnd=audio_emitter_create()
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
-	audio_play_sound_on(spellsnd,snd_robot_plasmashot3,false,8) 
+	sfx_play_on(spellsnd,snd_robot_plasmashot3,false,8) 
 	}else{
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==1){
-	audio_play_sound_on(spellsnd,snd_robot_plasmashot3_alt1,false,8) 
+	sfx_play_on(spellsnd,snd_robot_plasmashot3_alt1,false,8) 
 	}else{
-	audio_play_sound_on(spellsnd,snd_robot_plasmashot3,false,8) 
+	sfx_play_on(spellsnd,snd_robot_plasmashot3,false,8) 
 	}}
 	}}}
 	image_index=imgsave
@@ -239,7 +239,7 @@ function abilstrig_robot_scr(argument0) {
 	visible=false
 	image_speed=0.1
 	//End Explode Trail
-	for(i=0;i<18;i+=1){
+	for(i=0;i<13;i+=1){
 	if(duration mod modamount==0){
 	created=instance_create(x+irandom(2)*choose((type*.5),-(type*.5)),y+irandom(2)*choose((type*.75),-(type*.75)),Dummy_two_object)
 	with(created){
@@ -256,10 +256,10 @@ function abilstrig_robot_scr(argument0) {
 	}}
 	image_speed=0
 	image_index=irandom(image_number)
-	duration=4+irandom(16)+other.type*10
+	duration=3+irandom(11)+other.type*7
 	durationtotal=duration
 	speed=random_range(0.05,0.3)
-	direction=other.i*20
+	direction=other.i*28
 	hsp=hspeed
 	vsp=vspeed
 	speed=0
@@ -291,7 +291,7 @@ function abilstrig_robot_scr(argument0) {
 	Me.mana=Me.manatotal+Control.itemsArray[0,3]
 	}}}}
 	}}
-	audio_play_sound_at(choose(snd_burger_fries_hit1,snd_burger_fries_hit2),x,y, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_burger_fries_hit1,snd_burger_fries_hit2),x,y, 0, 90, 150, 0.5, false, 1) 
 	passivetarget=hit
 	phase=-1
 	with(hit){
@@ -329,7 +329,7 @@ function abilstrig_robot_scr(argument0) {
 	}}
 	image_speed=0
 	image_index=irandom(image_number)
-	duration=2+irandom(10)+other.type*4
+	duration=1+irandom(7)+other.type*3
 	durationtotal=duration
 
 	hsp=other.hsp*-1/8
@@ -358,7 +358,7 @@ function abilstrig_robot_scr(argument0) {
 	useaudio=1
 
 	spellsnd=audio_emitter_create()
-	audio_play_sound_on(spellsnd,choose(snd_robot_ionmissile1,snd_robot_ionmissile2,snd_robot_ionmissile3),false,8) 
+	sfx_play_on(spellsnd,choose(snd_robot_ionmissile1,snd_robot_ionmissile2,snd_robot_ionmissile3),false,8) 
 	damage=6
 	image_index=0
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
@@ -449,7 +449,7 @@ function abilstrig_robot_scr(argument0) {
 
 	if(phase=-1){
 	phase=-2
-	audio_play_sound_on(spellsnd,choose(snd_robot_ionexp1,snd_robot_ionexp2),false,8) 
+	sfx_play_on(spellsnd,choose(snd_robot_ionexp1,snd_robot_ionexp2),false,8) 
 	Control.screenshake+=12
 	//sprite_index=abil_robo_plasmashot_break_spr
 	visible=false
@@ -460,7 +460,7 @@ function abilstrig_robot_scr(argument0) {
 	if(phase>-1){
 	hit=instance_place(x,y,Enemy)
 	if(hit!=noone){
-	audio_play_sound_at(choose(snd_burger_fries_hit1,snd_burger_fries_hit2),x,y, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_burger_fries_hit1,snd_burger_fries_hit2),x,y, 0, 90, 150, 0.5, false, 1) 
 	passivetarget=hit
 	phase=-1
 	with(hit){
@@ -551,7 +551,7 @@ function abilstrig_robot_scr(argument0) {
 	vsp+=2.75
 	}}}}
 
-	audio_play_sound(snd_robot_blip1,8,false)
+	sfx_play(snd_robot_blip1,8,false)
 	duration=120
 	image_speed=0.125
 	image_index=0
@@ -570,7 +570,7 @@ function abilstrig_robot_scr(argument0) {
 	Me.dr=0
 	if(Me.hurttick>0){
 	Me.hurttick=0
-	audio_play_sound(snd_robot_blip2,8,false)
+	sfx_play(snd_robot_blip2,8,false)
 	Me.mana=Me.manatotal+Control.itemsArray[0,3]
 	}
 	if(duration>0){

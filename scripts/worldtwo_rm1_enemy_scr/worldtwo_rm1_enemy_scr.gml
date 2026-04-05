@@ -983,10 +983,10 @@ function worldtwo_rm1_enemy_scr() {
 	selfcreated.y=y+9+clock
 	}else{
 	if(!audio_is_playing(box1_snd)){
-	audio_play_sound(box1_snd,1,false)
+	sfx_play(box1_snd,1,false)
 	}else{
 	audio_stop_sound(box1_snd)
-	audio_play_sound(box1_snd,1,false)
+	sfx_play(box1_snd,1,false)
 	}
 	hurttick=0
 	delay=delaytotal
@@ -1117,10 +1117,10 @@ function worldtwo_rm1_enemy_scr() {
 	selfcreated.y=y+9+clock
 	}else{
 	if(!audio_is_playing(box1_snd)){
-	audio_play_sound(box1_snd,1,false)
+	sfx_play(box1_snd,1,false)
 	}else{
 	audio_stop_sound(box1_snd)
-	audio_play_sound(box1_snd,1,false)
+	sfx_play(box1_snd,1,false)
 	}
 	hurttick=0
 	delay=delaytotal
@@ -1173,7 +1173,7 @@ function worldtwo_rm1_enemy_scr() {
 	if(bomb>1){
 	Control.screenshake+=8
 	bomb-=1
-	audio_play_sound_at(choose(pump_abil1_snd1,pump_abil1_snd2),x,y, 0, 90, 150, 0.5, false, 1)
+	sfx_play_at(choose(pump_abil1_snd1,pump_abil1_snd2),x,y, 0, 90, 150, 0.5, false, 1)
 
 	chance=irandom(sprite_get_number(present_fetti_spr))
 	for(i=20;i>0;i-=1){

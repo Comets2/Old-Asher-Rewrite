@@ -174,7 +174,7 @@ function forest_snow_scr(argument0) {
 	hit=instance_place(x,y+vsp,Solid)
 	if(hit!=noone){
 	if(tick>0){
-	audio_play_sound_at(choose(snd_yeti_icehit_1,snd_yeti_icehit_2),x,y, 0, 90, 150, 0.5, false, 1)
+	sfx_play_at(choose(snd_yeti_icehit_1,snd_yeti_icehit_2),x,y, 0, 90, 150, 0.5, false, 1)
 	tick-=3
 	vsp=random_range(tick+0.375,tick+0.9)*-1
 	grav=0.055

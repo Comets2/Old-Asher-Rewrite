@@ -124,6 +124,12 @@ function charsave_scr(argument0) {
 	file_text_write_real(saveslot,world)
 	file_text_writeln(saveslot)
 
+	file_text_write_real(saveslot,heartcontainers)
+	file_text_writeln(saveslot)
+
+	file_text_write_real(saveslot,bosshearts)
+	file_text_writeln(saveslot)
+
 	file_text_close(saveslot)
 
 

@@ -459,7 +459,7 @@ function bosscontrol_scr() {
 	if(phase==0){
 	if(collision_rectangle(x+72,y+73,x+83,y+82,Me,false,false)){
 	phase=1
-	audio_play_sound(sunroar_snd1,10,false)
+	sfx_play(sunroar_snd1,10,false)
 	image_index=1
 	check=1
 	}}else{

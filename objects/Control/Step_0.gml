@@ -215,7 +215,7 @@ if(story==1){
 		}
 	}
 	if(storythree.talkcd==0){
-	//audio_play_sound_at(choose(hurt_snd1),storythree.x,storythree.y, 0, 90, 150, 0.5, false, 1) 
+	//sfx_play_at(choose(hurt_snd1),storythree.x,storythree.y, 0, 90, 150, 0.5, false, 1) 
 	}
 		if(storytwo.x<130){
 			if(storyseven.phase==0){
@@ -533,6 +533,7 @@ if(settings_row==0) master_vol=max(0,master_vol-0.05)
 if(settings_row==1) music_vol=max(0,music_vol-0.05)
 if(settings_row==2) sfx_vol=max(0,sfx_vol-0.05)
 audio_master_gain(master_vol)
+if(audio_is_playing(music)) audio_sound_gain(music,music_vol,0)
 }
 if(settings_tab==2){
 if(settings_row==0){
@@ -553,6 +554,7 @@ if(settings_row==0) master_vol=min(1,master_vol+0.05)
 if(settings_row==1) music_vol=min(1,music_vol+0.05)
 if(settings_row==2) sfx_vol=min(1,sfx_vol+0.05)
 audio_master_gain(master_vol)
+if(audio_is_playing(music)) audio_sound_gain(music,music_vol,0)
 }
 if(settings_tab==2){
 if(settings_row==0){
@@ -618,7 +620,19 @@ if(_r==0) master_vol=_nv
 if(_r==1) music_vol=_nv
 if(_r==2) sfx_vol=_nv
 audio_master_gain(master_vol)
+if(audio_is_playing(music)) audio_sound_gain(music,music_vol,0)
 }}}
+}
+//Cheat code: type "unlock" to unlock all masks at level 30
+settings_cheat += keyboard_string
+keyboard_string = ""
+if(string_length(settings_cheat)>6) settings_cheat=string_delete(settings_cheat,1,string_length(settings_cheat)-6)
+if(settings_cheat=="unlock"){
+settings_cheat=""
+for(var _m=0;_m<10;_m++){
+maskArray[_m,0]=30
+maskArray[_m,5]=0
+}
 }
 }
 
@@ -658,6 +672,7 @@ audio_resume_sound(music)
 }else{
 if(!audio_is_playing(music)){
 audio_play_sound(music,5,false)
+audio_sound_gain(music,music_vol,0)
 }}}
 }else{
 if(audio_is_playing(music)){
@@ -692,10 +707,10 @@ if(bg_layer5!=-1){ layer_x(bg_layer5,_vx/7); layer_y(bg_layer5,6) }
 if(maskArray[charArray[charselected,8],1]>=10+(maskArray[charArray[charselected,8],0]*10)){
 maskArray[charArray[charselected,8],1]-=10+(maskArray[charArray[charselected,8],0]*10)
 maskArray[charArray[charselected,8],0]+=1
-Me.hp+=1
 audio_pause_sound(music)
 musicother=lvlup_snd
 audio_play_sound(musicother,10,false)
+audio_sound_gain(musicother,music_vol,0)
 musiccheck=0
 writing=120
 wr1=0
@@ -867,6 +882,15 @@ charArray[charselected,4]=Me.y
 }}}}}}}
 */
 
+//Debug warp: hold P + press 1 = Tomb
+if(keyboard_check(ord("P"))){
+if(keyboard_check_pressed(ord("1"))){
+room=Tomb_rm1
+Me.x=16
+Me.y=16
+charArray[charselected,3]=Me.x
+charArray[charselected,4]=Me.y
+}}
 
 //Equipment
 if(pause==5){

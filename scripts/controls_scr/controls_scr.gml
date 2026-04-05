@@ -33,7 +33,14 @@ function controls_scr() {
 	con_p_q=keyboard_check_pressed(consave_q)
 	con_h_q=keyboard_check(consave_q)
 
-	    gamep1=gamepad_is_connected(gamepad_get_device_count()-1)
+	    gamep1=-1
+	    var _pad_count=gamepad_get_device_count()
+	    for(var _i=0;_i<_pad_count;_i++){
+	        if(gamepad_is_connected(_i)){
+	            gamep1=_i
+	            break
+	        }
+	    }
 	//up
 	if(gamepad_button_check_pressed(gamep1,gp_padu)){
 	conp_p_up=gamepad_button_check_pressed(gamep1,gp_padu)

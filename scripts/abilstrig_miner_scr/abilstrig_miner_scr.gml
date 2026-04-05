@@ -95,7 +95,7 @@ function abilstrig_miner_scr(argument0) {
 	}
 	Control.charcdArray[creator.charid,abil]=cdamount
 	if(point_distance(x,y,Me.x,Me.y)<275){
-	audio_play_sound_at(choose(pump_abil1_snd1,pump_abil1_snd2),x,y, 0, 90, 150, 0.5, false, 1)
+	sfx_play_at(choose(pump_abil1_snd1,pump_abil1_snd2),x,y, 0, 90, 150, 0.5, false, 1)
 	}
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
 	sprite_index=abil_pump1exp
@@ -249,7 +249,7 @@ function abilstrig_miner_scr(argument0) {
 	hsp=0
 	vsp=0
 	if(point_distance(x,y,Me.x,Me.y)<275){
-	audio_play_sound_at(choose(pump_abil1_snd1,pump_abil1_snd2),x,y, 0, 90, 150, 0.5, false, 1)
+	sfx_play_at(choose(pump_abil1_snd1,pump_abil1_snd2),x,y, 0, 90, 150, 0.5, false, 1)
 	}
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
 	sprite_index=abil_pump2exp
@@ -347,7 +347,7 @@ function abilstrig_miner_scr(argument0) {
 	image_index=0
 	image_speed=0.55
 	if(point_distance(x,y,Me.x,Me.y)<275){
-	audio_play_sound_at(choose(pump_abil1_snd1,pump_abil1_snd2),x,y, 0, 90, 150, 0.5, false, 1)
+	sfx_play_at(choose(pump_abil1_snd1,pump_abil1_snd2),x,y, 0, 90, 150, 0.5, false, 1)
 	}
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
 	sprite_index=abil_pump3exp

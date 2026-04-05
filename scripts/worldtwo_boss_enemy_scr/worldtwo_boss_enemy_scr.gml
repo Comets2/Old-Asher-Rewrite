@@ -64,7 +64,7 @@ function worldtwo_boss_enemy_scr() {
 
 	if(image_index>=9){
 	option=3
-	audio_play_sound_at(choose(bat_snd1,bat_snd2),x+sprite_width/2,y+sprite_height/2, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(bat_snd1,bat_snd2),x+sprite_width/2,y+sprite_height/2, 0, 90, 150, 0.5, false, 1) 
 	created=instance_create(x,y,Dummy_object)
 	with(created){
 	duration=99999
@@ -350,7 +350,7 @@ function worldtwo_boss_enemy_scr() {
 	times=0
 	if(attopt==0){
 	attopt=1
-	audio_play_sound_at(choose(bat_snd1,bat_snd2),x+sprite_width/2,y+sprite_height/2, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(bat_snd1,bat_snd2),x+sprite_width/2,y+sprite_height/2, 0, 90, 150, 0.5, false, 1) 
 	for(i=0;i<3+extra;i+=1){
 	created=instance_create(x+random_range(-2,2),y+random_range(-2,2),Dummy_object)
 	with(created){
@@ -371,7 +371,7 @@ function worldtwo_boss_enemy_scr() {
 	attopt=0
 	xpos=choose(92,804)
 	ypos=choose(240,240,240-48,240-48-32)
-	audio_play_sound_at(choose(snd_yeti_roar_1,snd_yeti_roar_2),x+sprite_width/2,y+sprite_height/2, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_yeti_roar_1,snd_yeti_roar_2),x+sprite_width/2,y+sprite_height/2, 0, 90, 150, 0.5, false, 1) 
 	for(i=0;i<9+(extra*3);i+=1){
 	created=instance_create(xpos,ypos,Dummy_object)
 	with(created){
@@ -653,7 +653,7 @@ function worldtwo_boss_enemy_scr() {
 	immune=1
 	mask_index=sprite_index
 	Control.screenshake=12
-	audio_play_sound_at(choose(snd_yeti_slam_1,snd_yeti_slam_2,snd_yeti_slam_3),x+sprite_width/2,y+sprite_height/2, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_yeti_slam_1,snd_yeti_slam_2,snd_yeti_slam_3),x+sprite_width/2,y+sprite_height/2, 0, 90, 150, 0.5, false, 1) 
 	for(i=0;i<35+(extra*32);i+=1){
 	created=instance_create(irandom_range(224,672),3,Dummy_object)
 	with(created){
@@ -816,7 +816,7 @@ function worldtwo_boss_enemy_scr() {
 	image_index=7
 	}else{
 	if(delay==4){
-		audio_play_sound_at(choose(snd_yeti_icebreath_1,snd_yeti_icebreath_2),x+sprite_width/2,y+sprite_height/2, 0, 90, 150, 0.5, false, 1) 
+		sfx_play_at(choose(snd_yeti_icebreath_1,snd_yeti_icebreath_2),x+sprite_width/2,y+sprite_height/2, 0, 90, 150, 0.5, false, 1) 
 	for(i=0;i<25+(extra*10);i+=1){
 	//FIRE
 	created=instance_create(x+random_range((4+other.extra)*-1,4+other.extra),y+3+random_range(-4+extra,4+extra),Dummy_object)

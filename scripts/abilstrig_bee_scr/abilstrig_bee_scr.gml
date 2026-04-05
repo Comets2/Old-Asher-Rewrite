@@ -15,12 +15,12 @@ function abilstrig_bee_scr(argument0) {
 	useaudio=1
 	spellsnd=audio_emitter_create()
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
-	audio_play_sound_on(spellsnd,choose(snd_bee_stinger1,snd_bee_stinger1),false,8)
+	sfx_play_on(spellsnd,choose(snd_bee_stinger1,snd_bee_stinger1),false,8)
 	}else{
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==1){
-	audio_play_sound_on(spellsnd,choose(snd_scarecrow_wheat1,snd_scarecrow_wheat2),false,8)
+	sfx_play_on(spellsnd,choose(snd_scarecrow_wheat1,snd_scarecrow_wheat2),false,8)
 	}else{
-	audio_play_sound_on(spellsnd,choose(snd_bee_stinger1,snd_bee_stinger1),false,8)
+	sfx_play_on(spellsnd,choose(snd_bee_stinger1,snd_bee_stinger1),false,8)
 	}}
 
 	for(i=0;i<3;i+=1){
@@ -342,12 +342,12 @@ function abilstrig_bee_scr(argument0) {
 	if(check==1){
 	//BEE HIVE BEE
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
-	audio_play_sound(choose(snd_bee_swarm1,snd_bee_swarm2,snd_bee_swarm3),8,false)
+	sfx_play(choose(snd_bee_swarm1,snd_bee_swarm2,snd_bee_swarm3),8,false)
 	}else{
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==1){
-	audio_play_sound(choose(snd_scarecrow_crow1,snd_scarecrow_crow2),8,false)
+	sfx_play(choose(snd_scarecrow_crow1,snd_scarecrow_crow2),8,false)
 	}else{
-	audio_play_sound(choose(snd_bee_swarm1,snd_bee_swarm2,snd_bee_swarm3),8,false)
+	sfx_play(choose(snd_bee_swarm1,snd_bee_swarm2,snd_bee_swarm3),8,false)
 	}}
 	duration=30
 	extracheck=0
@@ -427,12 +427,12 @@ function abilstrig_bee_scr(argument0) {
 	useaudio=1
 	spellsnd=audio_emitter_create()
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
-	audio_play_sound_on(spellsnd,choose(snd_bee_swarm1,snd_bee_swarm2,snd_bee_swarm3),false,8)
+	sfx_play_on(spellsnd,choose(snd_bee_swarm1,snd_bee_swarm2,snd_bee_swarm3),false,8)
 	}else{
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==1){
-	audio_play_sound_on(spellsnd,choose(snd_scarecrow_pumpkin1,snd_scarecrow_pumpkin2),false,8)
+	sfx_play_on(spellsnd,choose(snd_scarecrow_pumpkin1,snd_scarecrow_pumpkin2),false,8)
 	}else{
-	audio_play_sound(choose(snd_bee_swarm1,snd_bee_swarm2,snd_bee_swarm3),8,false)
+	sfx_play(choose(snd_bee_swarm1,snd_bee_swarm2,snd_bee_swarm3),8,false)
 	}}
 
 	hsp=0

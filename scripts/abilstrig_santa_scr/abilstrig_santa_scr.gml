@@ -65,14 +65,14 @@ function abilstrig_santa_scr(argument0) {
 	times-=1
 	}else{
 	phase=-2
-	audio_play_sound_at(choose(snd_christmas_hit1,snd_christmas_hit2),x,y, 0, 90, 150, 0.5, false, 1)
+	sfx_play_at(choose(snd_christmas_hit1,snd_christmas_hit2),x,y, 0, 90, 150, 0.5, false, 1)
 	}
 	if(times==2){
-	for(i=0;i<4;i+=1){
+	for(i=0;i<3;i+=1){
 	created=instance_create(x,y,Dummy_two_object)
 	with(created){
 	diddmg=0
-	direction=other.i*90+45
+	direction=other.i*120+45
 	depth=5
 	pin=50
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
@@ -97,16 +97,16 @@ function abilstrig_santa_scr(argument0) {
 	hsp=hspeed
 	vsp=vspeed
 	speed=0
-	duration=irandom_range(40,44)
+	duration=irandom_range(28,31)
 	}}
 	}
 
 
-	for(i=0;i<12;i+=1){
+	for(i=0;i<8;i+=1){
 	created=instance_create(x,y,Dummy_two_object)
 	with(created){
 	diddmg=0
-	direction=other.i*30
+	direction=other.i*45
 	pin=50
 	depth=4
 
@@ -132,7 +132,7 @@ function abilstrig_santa_scr(argument0) {
 	hsp=hspeed
 	vsp=vspeed
 	speed=0
-	duration=irandom_range(16,24)
+	duration=irandom_range(11,17)
 	}}
 
 
@@ -154,7 +154,7 @@ function abilstrig_santa_scr(argument0) {
 	damagedone=0
 	useaudio=1
 	spellsnd=audio_emitter_create()
-	audio_play_sound_on(spellsnd,choose(snd_christmas_wreath1,snd_christmas_wreath2),false,8)
+	sfx_play_on(spellsnd,choose(snd_christmas_wreath1,snd_christmas_wreath2),false,8)
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
 	sprite_index=abil_santa_wreath
 	}else{
@@ -231,7 +231,7 @@ function abilstrig_santa_scr(argument0) {
 	speed=random_range(0.05,0.25)
 	hsp=0
 	vsp=0
-	duration=irandom_range(16,36)
+	duration=irandom_range(11,25)
 	}}
 
 	delay-=1
@@ -271,11 +271,11 @@ function abilstrig_santa_scr(argument0) {
 	}else{
 	phase=-2
 	}
-	for(i=0;i<12;i+=1){
+	for(i=0;i<8;i+=1){
 	created=instance_create(x,y,Dummy_two_object)
 	with(created){
 	diddmg=0
-	direction=other.i*30+choose(-3,-1.5,0,1.5,3)+other.times
+	direction=other.i*45+choose(-3,-1.5,0,1.5,3)+other.times
 	pin=50
 	depth=5
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
@@ -291,7 +291,7 @@ function abilstrig_santa_scr(argument0) {
 	hsp=hspeed
 	vsp=vspeed
 	speed=0
-	duration=irandom_range(20,40)
+	duration=irandom_range(14,28)
 	}}
 
 	}else{
@@ -310,7 +310,7 @@ function abilstrig_santa_scr(argument0) {
 	delay=6
 	useaudio=1
 	spellsnd=audio_emitter_create()
-	audio_play_sound_on(spellsnd,choose(snd_christmas_sound1,snd_christmas_sound2),false,8)
+	sfx_play_on(spellsnd,choose(snd_christmas_sound1,snd_christmas_sound2),false,8)
 	}
 
 	for(i=0;i<2;i+=1){
@@ -333,7 +333,7 @@ function abilstrig_santa_scr(argument0) {
 	vsp=Me.vsp*-1
 	hsp=0
 	vsp=0
-	duration=irandom_range(20,30)
+	duration=irandom_range(14,21)
 	}}
 
 	duration=20
@@ -357,7 +357,7 @@ function abilstrig_santa_scr(argument0) {
 	if(delay<=0){
 	if(Me.grounded==1||extracheck==1){
 	Control.screenshake=24
-	audio_play_sound(choose(snd_yeti_slam_1,snd_yeti_slam_2,snd_yeti_slam_3),2,false)
+	sfx_play(choose(snd_yeti_slam_1,snd_yeti_slam_2,snd_yeti_slam_3),2,false)
 	for(i=0;i<5;i+=1){
 	//TREE SLAM
 	created=instance_create(Me.x+10+(i*4-8),Me.y+20,Dummy_two_object)
@@ -387,11 +387,11 @@ function abilstrig_santa_scr(argument0) {
 	timer=0
 	hsp=0
 	//effect
-	for(i=0;i<18;i+=1){
+	for(i=0;i<13;i+=1){
 	created=instance_create(x+choose(-3,-1.5,0,1.5,3),y-4+choose(-3,-1.5,0,1.5,3),Dummy_two_object)
 	with(created){
 	diddmg=0
-	direction=other.i*20+choose(-3,-1.5,0,1.5,3)+other.i
+	direction=other.i*28+choose(-3,-1.5,0,1.5,3)+other.i
 	pin=50
 	depth=5
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
@@ -407,7 +407,7 @@ function abilstrig_santa_scr(argument0) {
 	hsp=hspeed
 	vsp=vspeed
 	speed=0
-	duration=irandom_range(30,60)
+	duration=irandom_range(21,42)
 	}}
 	}}
 	instance_destroy()

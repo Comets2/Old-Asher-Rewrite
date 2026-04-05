@@ -67,6 +67,15 @@ function charloadhelp_scr(argument0) {
 	world=file_text_read_real(loadslot)
 	file_text_readln(loadslot)
 
+	if(!file_text_eof(loadslot)){
+	heartcontainers=file_text_read_real(loadslot)
+	file_text_readln(loadslot)
+	}
+	if(!file_text_eof(loadslot)){
+	bosshearts=file_text_read_real(loadslot)
+	file_text_readln(loadslot)
+	}
+
 	world=worldlast
 
 	file_text_close(loadslot)

@@ -23,10 +23,10 @@ tick=1
 if(Dummy_obj.key>0){
 Dummy_obj.key-=1
 hp=0
-audio_play_sound(key_snd1,1,false)
-audio_play_sound(doorlock_snd1,1,false)
+sfx_play(key_snd1,1,false)
+sfx_play(doorlock_snd1,1,false)
 }else{
-audio_play_sound(doorlock_snd1,1,false)
+sfx_play(doorlock_snd1,1,false)
 }}}else{
 tick=0
 close=0

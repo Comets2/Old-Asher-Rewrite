@@ -127,7 +127,7 @@ function mini_randomlvl_scr() {
 	if(hit!=noone){
 	hit.hp=0
 	with(Me){
-	audio_play_sound(die1,8,false)
+	sfx_play(die1,8,false)
 	}}
 	}else{
 	Control.screenshake+=7
@@ -234,15 +234,15 @@ function mini_randomlvl_scr() {
 	opened=1
 	with(other){
 	if(!audio_is_playing(lifesnd1)){
-	audio_play_sound(lifesnd1,8,false)
+	sfx_play(lifesnd1,8,false)
 	}else{
 	audio_stop_sound(lifesnd1)
-	audio_play_sound(lifesnd1,8,false)
+	sfx_play(lifesnd1,8,false)
 	}}
 	}else{
 	if(pin==72){
 	with(Me){
-	audio_play_sound(die1,8,false)
+	sfx_play(die1,8,false)
 	}
 	Me.hp=0
 	}}}}}}

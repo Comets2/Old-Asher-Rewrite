@@ -65,8 +65,20 @@ sprite_index=items_spr
 pull=10
 image_speed=0
 image_index=0
+}else{
+//Heart Container
+if(itemtype==6){
+nograv=1
+keep=1
+sprite_index=heartcontain_spr
+pull=10
+image_speed=0
+hp=1
+tick=0
+startx=x
+starty=y
 }
-}}}}}
+}}}}}}
 check=0
 }
 
@@ -126,7 +138,21 @@ if(y>starty-5){
 y-=0.15
 }else{
 tick=0
-}}}}
+}}}else{
+//Heart Container
+if(itemtype==6){
+if(tick==0){
+if(y<starty+4){
+y+=0.1
+}else{
+tick=1
+}}else{
+if(y>starty-4){
+y-=0.1
+}else{
+tick=0
+}}
+}}}
 }
 
 if(nograv==0){
@@ -177,12 +203,23 @@ levelsArray[owLevels[charArray[charselected,6],charArray[charselected,7]]+actcho
 }else{
 if(itemtype==10){
 Dummy_obj.key+=1
-}}}}
+}else{
+if(itemtype==6){
+if(image_index==0){
+Control.heartcontainers+=4
+}else{
+Control.heartcontainers+=2
+}
+with(Me){
+hptotal=8+Control.itemsArray[0,2]-Control.itemsArray[0,12]+hpplus+Control.heartcontainers
+hp=hptotal
+}
+}}}}}
 if(audio_is_playing(snd1)){
 audio_stop_sound(snd1)
-audio_play_sound(snd1,8,false)
+sfx_play(snd1,8,false)
 }else{
-audio_play_sound(snd1,8,false)
+sfx_play(snd1,8,false)
 }
 instance_destroy()
 }

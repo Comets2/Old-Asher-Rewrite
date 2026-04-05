@@ -62,7 +62,7 @@ function forestenemy_1_scr() {
 	attone=20
 	attcd=360
 	image_index=2
-	audio_play_sound_at(choose(sandstorm_snd1,sandstorm_snd2),x,y,0,5,300,1,false,8)
+	sfx_play_at(choose(sandstorm_snd1,sandstorm_snd2),x,y,0,5,300,1,false,8)
 	}else{
 	if(image_index>1){
 	image_index=0

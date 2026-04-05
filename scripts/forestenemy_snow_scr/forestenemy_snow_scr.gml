@@ -96,7 +96,7 @@ function forestenemy_snow_scr() {
 	attone=20
 	attcd=360
 	image_index=2
-	audio_play_sound_at(choose(sandstorm_snd1,sandstorm_snd2),x,y,0,5,300,1,false,8)
+	sfx_play_at(choose(sandstorm_snd1,sandstorm_snd2),x,y,0,5,300,1,false,8)
 	}else{
 	if(image_index>1){
 	image_index=0
@@ -342,7 +342,7 @@ function forestenemy_snow_scr() {
 	if(blink==0){
 	//***{HANDS}***
 	if(instance_exists(handone)||instance_exists(handtwo)){
-	audio_play_sound_at(choose(snd_yeti_roar_1,snd_yeti_roar_2),x+sprite_width/2,y+sprite_height/2, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_yeti_roar_1,snd_yeti_roar_2),x+sprite_width/2,y+sprite_height/2, 0, 90, 150, 0.5, false, 1) 
 	//GRAB
 	if(lastmove==0){
 	lastmove=1
@@ -461,7 +461,7 @@ function forestenemy_snow_scr() {
 	delay=random_range(14,30)
 	yspot=y+56
 	xspot=0
-	audio_play_sound_at(choose(snd_yeti_icebreath_1,snd_yeti_icebreath_2),x,y, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_yeti_icebreath_1,snd_yeti_icebreath_2),x,y, 0, 90, 150, 0.5, false, 1) 
 	for(i=0;i<5;i+=1){
 	created=instance_create(x+27+(xspot*10),yspot,Dummy_object)
 	with(created){
@@ -490,7 +490,7 @@ function forestenemy_snow_scr() {
 	delay=random_range(14,30)
 	yspot=y+56
 	xspot=0
-	audio_play_sound_at(choose(snd_yeti_icebreath_1,snd_yeti_icebreath_2),x,y, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_yeti_icebreath_1,snd_yeti_icebreath_2),x,y, 0, 90, 150, 0.5, false, 1) 
 	for(i=0;i<5;i+=1){
 	created=instance_create(x+27+(xspot*10),yspot,Dummy_object)
 	with(created){
@@ -532,7 +532,7 @@ function forestenemy_snow_scr() {
 	if(spotticktotal<8){
 	if(spot mod 18==0){
 	spotticktotal+=1
-	audio_play_sound_at(choose(snd_yeti_icehit_1,snd_yeti_icehit_2),x,y, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_yeti_icehit_1,snd_yeti_icehit_2),x,y, 0, 90, 150, 0.5, false, 1) 
 	for(i=0;i<2;i+=1){
 	if(spottype==1){
 	if(i==0){
@@ -761,7 +761,7 @@ function forestenemy_snow_scr() {
 	tick=0
 	Control.screenshake=10
 
-	audio_play_sound_at(choose(snd_yeti_slam_1,snd_yeti_slam_2,snd_yeti_slam_3),x,y, 0, 90, 150, 0.5, false, 1)
+	sfx_play_at(choose(snd_yeti_slam_1,snd_yeti_slam_2,snd_yeti_slam_3),x,y, 0, 90, 150, 0.5, false, 1)
 	created=instance_create(irandom_range(1664,1824),350,Dummy_object)
 	with(created){
 	delay=44

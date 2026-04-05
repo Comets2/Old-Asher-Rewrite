@@ -11,13 +11,13 @@ drdraw=2
 }
 if(meequipcheck==1){
 meequipcheck=0
-hpplus=floor((Control.maskArray[Control.charArray[Control.charselected,8],0]-1)/2)
-hptotal=8+Control.itemsArray[0,2]-Control.itemsArray[0,12]+hpplus
+hpplus=0
+hptotal=8+Control.itemsArray[0,2]-Control.itemsArray[0,12]+hpplus+Control.heartcontainers
 meequipcheck=2
 }else{
 if(meequipcheck==2){
-hpplus=floor((Control.maskArray[Control.charArray[Control.charselected,8],0]-1)/2)
-hptotal=8+Control.itemsArray[0,2]-Control.itemsArray[0,12]+hpplus
+hpplus=0
+hptotal=8+Control.itemsArray[0,2]-Control.itemsArray[0,12]+hpplus+Control.heartcontainers
 }}
 if(hp>hptotal){
 hp=hptotal
@@ -85,6 +85,7 @@ Control.charcdArray[charid,i]-=1
 }}
 
 //Abil1
+if(Control.maskArray[Control.charArray[Control.charselected,8],0]>=5){
 if(Control.abilArray[1,4]!=2){
 if(Control.con_p_q&&!Control.con_h_up&&!Control.con_h_down||Control.conp_p_q&&!Control.conp_h_up&&!Control.conp_h_down){
 abil_scr(1,0)
@@ -105,6 +106,7 @@ abil_scr(1,1)
 if(Control.con_h_q&&Control.con_h_up&&!Control.con_h_down||Control.conp_h_q&&Control.conp_h_up&&!Control.conp_h_down){
 abil_scr(1,2)
 }}}
+}
 }
 //Abil2
 if(Control.abilArray[0,4]!=2){
@@ -129,6 +131,7 @@ abil_scr(0,2)
 }}}
 }
 //Abil3
+if(Control.maskArray[Control.charArray[Control.charselected,8],0]>=10){
 if(Control.abilArray[2,4]!=2){
 if(Control.con_p_w||Control.conp_p_w){
 abil_scr(2,0)
@@ -137,6 +140,7 @@ abil_scr(2,0)
 if(Control.con_h_w||Control.conp_h_w){
 abil_scr(2,0)
 }}
+}
 
 if(grounded==1){
 if(Control.abilArray[1,4]==5){
@@ -145,7 +149,10 @@ Control.charcdArray[charid,1]=0
 
 if(autocast>0){
 autocast-=1
+var _autolvl=Control.maskArray[Control.charArray[Control.charselected,8],0];
+if((autocastspell==1&&_autolvl>=5)||(autocastspell==2&&_autolvl>=10)||autocastspell==0){
 abil_scr(autocastspell,0)
+}
 }
 }else{
 

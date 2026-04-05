@@ -158,7 +158,7 @@ function overworldlevels_scr(argument0) {
 	//ENTER LEVEL
 	if(delay<=0){
 	if(con_p_e||con_p_enter||conp_p_space||conp_p_enter){
-	if(Control.maskArray[Control.charArray[Control.charselected,8],5]==0){
+	if(Control.maskArray[Control.charArray[Control.charselected,8],5]==0&&!(actopttwo==1&&maskArray[actopt,0]<15)){
 	charArray[charselected,8]=actopt
 	maskArray[charArray[charselected,8],2]=actopttwo
 	charArray[charselected,6]=other.mex

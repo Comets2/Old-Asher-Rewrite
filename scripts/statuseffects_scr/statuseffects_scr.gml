@@ -56,7 +56,7 @@ function statuseffects_scr() {
 
 	if(point_distance(x,y,Me.x,Me.y)<275){
 	chance=choose(hurtsound,hurtsoundtwo)
-	audio_play_sound_at(chance,x,y, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(chance,x,y, 0, 90, 150, 0.5, false, 1) 
 	}}else{
 
 	drdr=0

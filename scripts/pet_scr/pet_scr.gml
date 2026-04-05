@@ -360,7 +360,7 @@ function pet_scr(argument0) {
 	created=instance_create(x,y+4,Dummy_two_object)
 	with(created){
 	pin=654
-	audio_play_sound_at(choose(other.snd1,other.snd2),x,y+4, 0, 110, 150, 0.2, false, 1) 
+	sfx_play_at(choose(other.snd1,other.snd2),x,y+4, 0, 110, 150, 0.2, false, 1) 
 
 	if(argument0==4){
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
@@ -436,7 +436,7 @@ function pet_scr(argument0) {
 	phase=0
 	depth=6
 	image_speed=0.15
-	audio_play_sound_at(choose(other.snd1,other.snd2),x,y+4, 0, 110, 150, 0.2, false, 1) 
+	sfx_play_at(choose(other.snd1,other.snd2),x,y+4, 0, 110, 150, 0.2, false, 1) 
 
 	if(argument0==2){
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
@@ -701,8 +701,8 @@ function pet_scr(argument0) {
 	damage=0.4
 	}}
 
-	audio_play_sound(choose(snd_christmas_block1,snd_christmas_block2),1, false)
-	audio_play_sound_at(choose(snd_christmas_sound1,snd_christmas_sound2),x,y, 0, 90, 150, 0.5, false, 1)
+	sfx_play(choose(snd_christmas_block1,snd_christmas_block2),1, false)
+	sfx_play_at(choose(snd_christmas_sound1,snd_christmas_sound2),x,y, 0, 90, 150, 0.5, false, 1)
 	abilopttwo=1
 	if(Control.con_p_space||Control.conp_p_space||Control.con_h_space||Control.conp_h_space){
 	vsp=-6.5
@@ -885,7 +885,7 @@ function pet_scr(argument0) {
 	created=instance_create(x,y+4,Dummy_two_object)
 	with(created){
 	pin=652
-	audio_play_sound_at(choose(other.snd1,other.snd2),x,y+4, 0, 110, 150, 0.2, false, 1) 
+	sfx_play_at(choose(other.snd1,other.snd2),x,y+4, 0, 110, 150, 0.2, false, 1) 
 
 	if(argument0==4){
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
@@ -941,7 +941,7 @@ function pet_scr(argument0) {
 	created=instance_create(x,y+4,Dummy_two_object)
 	with(created){
 	pin=652
-	audio_play_sound_at(choose(other.snd1,other.snd2),x,y+4, 0, 110, 150, 0.2, false, 1) 
+	sfx_play_at(choose(other.snd1,other.snd2),x,y+4, 0, 110, 150, 0.2, false, 1) 
 
 	if(argument0==3){
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){
@@ -990,7 +990,7 @@ function pet_scr(argument0) {
 	if(attacktype==2){
 	delay=delaytotal
 
-	audio_play_sound_at(choose(snd1,snd2),x,y+4, 0, 110, 150, 0.2, false, 1) 
+	sfx_play_at(choose(snd1,snd2),x,y+4, 0, 110, 150, 0.2, false, 1) 
 
 	//Bat
 	if(Control.maskArray[Control.charArray[Control.charselected,8],2]==0){

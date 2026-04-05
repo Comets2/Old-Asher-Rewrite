@@ -223,14 +223,14 @@ function mecontrol_scr() {
 	//}
 	walksnd=(irandom(2))
 	if(walksnd==1){
-	audio_play_sound(mewalk1,6,false)
+	sfx_play(mewalk1,6,false)
 	sounddel=16
 	}else{
 	if(walksnd==2){
-	audio_play_sound(mewalk2,6,false)
+	sfx_play(mewalk2,6,false)
 	sounddel=16
 	}else{
-	audio_play_sound(mewalk3,6,false)
+	sfx_play(mewalk3,6,false)
 	sounddel=16
 	}}}}}
 	direction=0
@@ -308,14 +308,14 @@ function mecontrol_scr() {
 	}
 	walksnd=(irandom(2))
 	if(walksnd==1){
-	audio_play_sound(mewalk1,6,false)
+	sfx_play(mewalk1,6,false)
 	sounddel=16
 	}else{
 	if(walksnd==2){
-	audio_play_sound(mewalk2,6,false)
+	sfx_play(mewalk2,6,false)
 	sounddel=16
 	}else{
-	audio_play_sound(mewalk3,6,false)
+	sfx_play(mewalk3,6,false)
 	sounddel=16
 	}}}}}
 	direction=180

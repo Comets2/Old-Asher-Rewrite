@@ -29,6 +29,13 @@ key_right=1
 dir=0
 stopcd=0
 
+deathcd=20
+deathtick=1
+undie=0
+ending=1
+extragold=50
+extraxp=20
+
 if(room==Cathedral_rm){
 enemytype=1
 mew=skell_w
@@ -68,6 +75,8 @@ mask_index=sprite_index
 image_speed=0
 bossindex=1
 anim=0
+extragold=75
+extraxp=30
 }
 }}}
 

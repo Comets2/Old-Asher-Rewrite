@@ -20,7 +20,7 @@ function forestenemy_3_scr() {
 	mask_index=witch_brew_spr
 	atdelay=0
 	enemy=0
-	attotal=50
+	attotal=100
 	hp=7
 	hptotal=hp
 	}else{
@@ -73,7 +73,7 @@ function forestenemy_3_scr() {
 	mask_index=image_index
 	atdelay=0
 	enemy=0
-	attotal=45
+	attotal=90
 	hp=30
 	hptotal=hp
 	dir=0
@@ -94,7 +94,7 @@ function forestenemy_3_scr() {
 	pin=11
 	damage=1
 	num=other.i
-	image_speed=0.3
+	image_speed=0.15
 	sprite_index=witch_bats_spr
 	direction=point_direction(x,y,Me.x+8,Me.y+12)
 	direction+=other.i*4
@@ -102,12 +102,12 @@ function forestenemy_3_scr() {
 	}else{
 
 	//Wind Up
-	if(atdelay==attotal-20){
+	if(atdelay==attotal-40){
 	sprite_index=witch_brew_spr
 	}
-	if(atdelay<=11){
+	if(atdelay<=22){
 	atdelay-=1
-	if(atdelay==10){
+	if(atdelay==20){
 	atdelay-=1
 	image_index=0
 	if(Me.x>x){
@@ -122,7 +122,7 @@ function forestenemy_3_scr() {
 	atdelay-=1
 	}}else{
 	//Out of Range
-	if(atdelay==12){
+	if(atdelay==24){
 	sprite_index=witch_brew_spr
 	}else{
 	atdelay-=1

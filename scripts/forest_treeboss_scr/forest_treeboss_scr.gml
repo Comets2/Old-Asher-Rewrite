@@ -125,7 +125,7 @@ function forest_treeboss_scr() {
 	}
 
 	if(audioplay==5){
-	audio_play_sound_at(choose(snd_bossproj_tree_1,snd_bossproj_tree_2),x,y, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_bossproj_tree_1,snd_bossproj_tree_2),x,y, 0, 90, 150, 0.5, false, 1) 
 	}
 
 	hit=instance_place(x,y,Me)

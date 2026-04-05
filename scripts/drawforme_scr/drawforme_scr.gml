@@ -95,19 +95,19 @@ function drawforme_scr() {
 	if(writing>0){
 	writing-=1
 	draw_sprite(levelupcongrats_spr,0,__view_get( e__VW.XView, 0 )+__view_get( e__VW.WView, 0 )/2,(__view_get( e__VW.YView, 0 )+__view_get( e__VW.HView, 0 )/2)-30)
-	if((Control.maskArray[Control.charArray[Control.charselected,8],0] +1) mod 2 == 0){
-			if((Control.maskArray[Control.charArray[Control.charselected,8],0])> 8){
-		draw_text_ext_transformed(__view_get( e__VW.XView, 0 )+__view_get( e__VW.WView, 0 )/2-23,(__view_get( e__VW.YView, 0 )+__view_get( e__VW.HView, 0 )/2)-30+5,"PetDmg HpUp",1,1000,0.5,0.5,0)
-		}else{
-	draw_text_ext_transformed(__view_get( e__VW.XView, 0 )+__view_get( e__VW.WView, 0 )/2-23,(__view_get( e__VW.YView, 0 )+__view_get( e__VW.HView, 0 )/2)-30+5,"Health UP",1,1000,0.5,0.5,0)
-		}
+	if(wr1==1){
+	draw_text_ext_transformed(__view_get( e__VW.XView, 0 )+__view_get( e__VW.WView, 0 )/2-23,(__view_get( e__VW.YView, 0 )+__view_get( e__VW.HView, 0 )/2)-30+5,"+1 Heart",1,1000,0.5,0.5,0)
+	}else if(wr1==2){
+	draw_text_ext_transformed(__view_get( e__VW.XView, 0 )+__view_get( e__VW.WView, 0 )/2-23,(__view_get( e__VW.YView, 0 )+__view_get( e__VW.HView, 0 )/2)-30+5,"+ Half Heart",1,1000,0.5,0.5,0)
 	}else{
-		if((Control.maskArray[Control.charArray[Control.charselected,8],0])== 8){
-		draw_text_ext_transformed(__view_get( e__VW.XView, 0 )+__view_get( e__VW.WView, 0 )/2-23,(__view_get( e__VW.YView, 0 )+__view_get( e__VW.HView, 0 )/2)-30+5,"Pet unlocked",1,1000,0.5,0.5,0)
-		}else{
-		if((Control.maskArray[Control.charArray[Control.charselected,8],0])> 8){
-		draw_text_ext_transformed(__view_get( e__VW.XView, 0 )+__view_get( e__VW.WView, 0 )/2-23,(__view_get( e__VW.YView, 0 )+__view_get( e__VW.HView, 0 )/2)-30+5,"Pet Damage UP",1,1000,0.5,0.5,0)
-		}}
+	var _lvl=Control.maskArray[Control.charArray[Control.charselected,8],0];
+	if(_lvl==5){
+	draw_text_ext_transformed(__view_get( e__VW.XView, 0 )+__view_get( e__VW.WView, 0 )/2-23,(__view_get( e__VW.YView, 0 )+__view_get( e__VW.HView, 0 )/2)-30+5,"Q Unlocked",1,1000,0.5,0.5,0)
+	}else if(_lvl==10){
+	draw_text_ext_transformed(__view_get( e__VW.XView, 0 )+__view_get( e__VW.WView, 0 )/2-23,(__view_get( e__VW.YView, 0 )+__view_get( e__VW.HView, 0 )/2)-30+5,"W Unlocked",1,1000,0.5,0.5,0)
+	}else{
+	draw_text_ext_transformed(__view_get( e__VW.XView, 0 )+__view_get( e__VW.WView, 0 )/2-23,(__view_get( e__VW.YView, 0 )+__view_get( e__VW.HView, 0 )/2)-30+5,"Level Up!",1,1000,0.5,0.5,0)
+	}
 	}
 	}
 
@@ -136,13 +136,21 @@ function drawforme_scr() {
 	itwo=1
 	ithree=0
 	}}
+	var _ablvl=maskArray[charArray[charselected,8],0];
+	var _locked=false;
+	if(itwo==1&&_ablvl<5){ _locked=true; }
+	if(itwo==2&&_ablvl<10){ _locked=true; }
 	cddraw=charcdArray[Me.charid,itwo]/abilArray[itwo,1]
+	if(_locked){
+	draw_sprite(abilpancd,ithree,__view_get( e__VW.XView, 0 )+__view_get( e__VW.WView, 0 )/2+xpos,__view_get( e__VW.YView, 0 )+__view_get( e__VW.HView, 0 )+ypos)
+	}else{
 	if(charcdArray[Me.charid,itwo]==0){
 	draw_sprite(abilpan,ithree,__view_get( e__VW.XView, 0 )+__view_get( e__VW.WView, 0 )/2+xpos,__view_get( e__VW.YView, 0 )+__view_get( e__VW.HView, 0 )+ypos)
 	}else{
 	draw_sprite(abilpancd,ithree,__view_get( e__VW.XView, 0 )+__view_get( e__VW.WView, 0 )/2+xpos,__view_get( e__VW.YView, 0 )+__view_get( e__VW.HView, 0 )+ypos)
 	}
 	draw_sprite(abilcd_spr,cddraw*6,__view_get( e__VW.XView, 0 )+__view_get( e__VW.WView, 0 )/2+xpos,__view_get( e__VW.YView, 0 )+__view_get( e__VW.HView, 0 )+ypos)
+	}
 	xpos+=12
 	}}
 

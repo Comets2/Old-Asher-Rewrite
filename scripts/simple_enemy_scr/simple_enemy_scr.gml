@@ -30,7 +30,7 @@ function simple_enemy_scr(argument0) {
 	}else{
 	chance=walksnd2
 	}
-	audio_play_sound_at(chance, x+8, y+8, 0, 90, 150, 1, false, 1)
+	sfx_play_at(chance, x+8, y+8, 0, 90, 150, 1, false, 1)
 	}else{
 	if(sounddelay>0){
 	sounddelay-=1

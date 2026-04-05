@@ -116,6 +116,7 @@ colorlightgreen = $8EDDCA
 //Settings
 settings_tab = 0
 settings_row = -1
+settings_cheat = ""
 master_vol = 1
 music_vol = 1
 sfx_vol = 1
@@ -152,6 +153,8 @@ chestopt=2
 chestoptforce=0
 worldlock=1
 worldlast=1
+heartcontainers=0
+bosshearts=0
 vibrate=0
 worldx=0
 worldy=3

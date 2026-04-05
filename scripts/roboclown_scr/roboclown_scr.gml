@@ -143,7 +143,7 @@ function roboclown_scr() {
 	y-=2
 	height+=3
 	image_angle-=5
-	audio_play_sound(shot_snd1,7,false)
+	sfx_play(shot_snd1,7,false)
 	cannonball=instance_create(x+15,y+52,Dummy_object)
 	with(cannonball){
 	pin=103
@@ -217,7 +217,7 @@ function roboclown_scr() {
 	height+=3
 	image_angle-=5
 	chance=1
-	audio_play_sound(shot_snd2,7,false)
+	sfx_play(shot_snd2,7,false)
 	for(i=0;i<6;i+=1){
 	cannonball=instance_create(x+15,y+52,Dummy_object)
 	with(cannonball){
@@ -296,9 +296,9 @@ function roboclown_scr() {
 	image_angle-=3
 	if(audio_is_playing(rocket_snd1)){
 	audio_stop_sound(rocket_snd1)
-	audio_play_sound(rocket_snd1,7,false)
+	sfx_play(rocket_snd1,7,false)
 	}else{
-	audio_play_sound(rocket_snd1,7,false)
+	sfx_play(rocket_snd1,7,false)
 	}
 	cannonball=instance_create(x+15,y+25,Dummy_object)
 	with(cannonball){
@@ -385,9 +385,9 @@ function roboclown_scr() {
 	attackan=6
 	chance=choose(0,1)
 	if(chance==0){
-	audio_play_sound(roboroar_snd1,7,false)
+	sfx_play(roboroar_snd1,7,false)
 	}else{
-	audio_play_sound(roboroar_snd2,7,false)
+	sfx_play(roboroar_snd2,7,false)
 	}}
 	}else{
 	attackdelay=120
@@ -493,9 +493,9 @@ function roboclown_scr() {
 	Control.screenshake+=3
 	if(audio_is_playing(explosion_snd1)){
 	audio_stop_sound(explosion_snd1)
-	audio_play_sound(explosion_snd1,7,false)
+	sfx_play(explosion_snd1,7,false)
 	}else{
-	audio_play_sound(explosion_snd1,7,false)
+	sfx_play(explosion_snd1,7,false)
 	}
 	smoke=instance_create(other.x,other.y,Dummy_object)
 	//smoke

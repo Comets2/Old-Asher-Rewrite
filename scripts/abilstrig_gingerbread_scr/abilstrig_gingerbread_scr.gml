@@ -98,8 +98,8 @@ function abilstrig_gingerbread_scr(argument0) {
 	hit.jumpdel=20
 	hit.hp=0
 	damage+=4
-	audio_play_sound_at(choose(snd_christmas_hit1,snd_christmas_hit2),x,y, 0, 90, 150, 0.5, false, 1)
-	audio_play_sound_at(choose(snd_christmas_block1,snd_christmas_block2),x,y, 0, 90, 150, 0.5, false, 1)
+	sfx_play_at(choose(snd_christmas_hit1,snd_christmas_hit2),x,y, 0, 90, 150, 0.5, false, 1)
+	sfx_play_at(choose(snd_christmas_block1,snd_christmas_block2),x,y, 0, 90, 150, 0.5, false, 1)
 
 	chance=floor(hit.image_index/8)
 	for(i=0;i<36;i+=1){
@@ -136,7 +136,7 @@ function abilstrig_gingerbread_scr(argument0) {
 
 	if(phase==-1){
 	phase=-2
-	audio_play_sound_at(choose(snd_christmas_hit1,snd_christmas_hit2),x,y, 0, 90, 150, 0.5, false, 1)
+	sfx_play_at(choose(snd_christmas_hit1,snd_christmas_hit2),x,y, 0, 90, 150, 0.5, false, 1)
 
 	for(i=0;i<9;i+=1){
 	created=instance_create(x,y,Dummy_two_object)
@@ -321,7 +321,7 @@ function abilstrig_gingerbread_scr(argument0) {
 	}else{
 	if(attcd==36){
 	//Turret Attack
-	audio_play_sound_at(choose(snd_christmas_throw1,snd_christmas_throw2),x,y, 0, 90, 150, 0.5, false, 1)
+	sfx_play_at(choose(snd_christmas_throw1,snd_christmas_throw2),x,y, 0, 90, 150, 0.5, false, 1)
 	for(i=0;i<3;i+=1){
 	created=instance_create(x,y+9,Dummy_two_object)
 	with(created){
@@ -402,7 +402,7 @@ function abilstrig_gingerbread_scr(argument0) {
 	y=savey
 	phase=0
 	check=1
-	audio_play_sound_at(choose(snd_christmas_throw1,snd_christmas_throw2),x,y, 0, 90, 150, 0.5, false, 1)
+	sfx_play_at(choose(snd_christmas_throw1,snd_christmas_throw2),x,y, 0, 90, 150, 0.5, false, 1)
 	//Death burst
 	for(i=0;i<9;i+=1){
 	created=instance_create(x,y+9,Dummy_two_object)
@@ -467,11 +467,11 @@ function abilstrig_gingerbread_scr(argument0) {
 	ycheck-=8
 	Me.y-=8
 	}
-	audio_play_sound_at(choose(snd_christmas_sound1,snd_christmas_sound2),x,y, 0, 90, 150, 0.5, false, 1)
-	audio_play_sound_at(choose(snd_christmas_block1,snd_christmas_block2),x,y, 0, 90, 150, 0.5, false, 1)
-	created=instance_create(Me.x+4,ycheck,Dummy_solid)
+	sfx_play_at(choose(snd_christmas_sound1,snd_christmas_sound2),x,y, 0, 90, 150, 0.5, false, 1)
+	sfx_play_at(choose(snd_christmas_block1,snd_christmas_block2),x,y, 0, 90, 150, 0.5, false, 1)
+	created=instance_create(Me.x+4,ycheck+4,Dummy_solid)
 	with(created){
-	hurttick=1
+	hurttick=0
 	jumpdel=0
 	duration=1
 

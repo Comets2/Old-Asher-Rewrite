@@ -23,7 +23,7 @@ function abilstrig_burger_scr(argument0) {
 	check=0
 	useaudio=1
 	spellsnd=audio_emitter_create()
-	audio_play_sound_on(spellsnd,choose(snd_burger_burger_sizzle1,snd_burger_burger_sizzle2),false,8)
+	sfx_play_on(spellsnd,choose(snd_burger_burger_sizzle1,snd_burger_burger_sizzle2),false,8)
 	duration=100
 	gravsped=0.0275
 	gravspedtick=0
@@ -61,14 +61,14 @@ function abilstrig_burger_scr(argument0) {
 	//ENEMY
 	hit=instance_place(x,y,Enemy)
 	if(hit!=noone){
-	//audio_play_sound_at(choose(snd_burger_burger_thud1,snd_burger_burger_thud2),x,y, 0, 90, 150, 0.5, false, 1) 
+	//sfx_play_at(choose(snd_burger_burger_thud1,snd_burger_burger_thud2),x,y, 0, 90, 150, 0.5, false, 1) 
 	diddmg=1
 	if(Me.passivetick<3&&type!=2){
 	Me.passivetick+=1
 	if(Me.passivetick<3){
-	audio_play_sound(snd_burger_burger_passiveready2,1,false) 
+	sfx_play(snd_burger_burger_passiveready2,1,false) 
 	}else{
-	audio_play_sound(snd_burger_burger_passiveready1,1,false) 
+	sfx_play(snd_burger_burger_passiveready1,1,false) 
 	}}
 	if(type==2){
 	if(Me.mana<(Me.manatotal+Control.itemsArray[0,3])-(Control.abilArray[argument0,0])){
@@ -94,7 +94,7 @@ function abilstrig_burger_scr(argument0) {
 	hit.hurttick=1
 	}}
 	if(instance_place(x+hsp,y+vsp+gravspedtick,Solid)||duration<=0){
-	audio_play_sound_at(choose(snd_burger_burger_thud1,snd_burger_burger_thud2),x,y, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_burger_burger_thud1,snd_burger_burger_thud2),x,y, 0, 90, 150, 0.5, false, 1) 
 	phase=-1
 	Me.passivetick=0
 	}}else{
@@ -186,7 +186,7 @@ function abilstrig_burger_scr(argument0) {
 	if(check==1){
 	check=0
 	type=1
-	audio_play_sound_at(choose(snd_burger_fries_throw1,snd_burger_fries_throw2),x,y, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_burger_fries_throw1,snd_burger_fries_throw2),x,y, 0, 90, 150, 0.5, false, 1) 
 	if(Me.onpassive==1){
 	checkpin=Me.checkpin
 	type=2

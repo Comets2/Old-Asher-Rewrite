@@ -37,7 +37,7 @@ function projcheck_scr(argument0) {
 
 	useaudio=1
 	spellsnd=audio_emitter_create()
-	audio_play_sound_on(spellsnd,choose(sunshot_snd1,sunshot_snd2),false,8)
+	sfx_play_on(spellsnd,choose(sunshot_snd1,sunshot_snd2),false,8)
 
 
 	if(option==1){
@@ -89,7 +89,7 @@ function projcheck_scr(argument0) {
 	useaudio=1
 	audiosize=5
 	spellsnd=audio_emitter_create()
-	audio_play_sound_on(spellsnd,choose(sandstorm_snd1,sandstorm_snd2),false,8)
+	sfx_play_on(spellsnd,choose(sandstorm_snd1,sandstorm_snd2),false,8)
 	}
 
 	sprite_index=abil_phar2
@@ -133,9 +133,9 @@ function projcheck_scr(argument0) {
 
 	chance=irandom(1)
 	if(chance==1){
-	audio_play_sound(witch_abil1_snd1,8,false)
+	sfx_play(witch_abil1_snd1,8,false)
 	}else{
-	audio_play_sound(witch_abil1_snd2,8,false)
+	sfx_play(witch_abil1_snd2,8,false)
 	}
 
 	if(creator.direction==0){
@@ -350,7 +350,7 @@ function projcheck_scr(argument0) {
 	if(duration>120){
 	other.creator.mana+=10
 	}}}
-	audio_play_sound(shot_snd1,7,false)
+	sfx_play(shot_snd1,7,false)
 	duration=180
 	sprite_index=abil_robo1
 	image_speed=0
@@ -384,7 +384,7 @@ function projcheck_scr(argument0) {
 
 	Control.screenshake+=2
 	if(!audio_is_playing(shot_snd2)){
-	audio_play_sound(shot_snd2,7,false)
+	sfx_play(shot_snd2,7,false)
 	}
 	duration=60
 	sprite_index=abil_robo2

@@ -70,7 +70,7 @@ if(point_distance(x,y,Me.x,Me.y)<275){
 with(Control){
 soundposx=other.x+(other.sprite_width/2)
 soundposy=other.y+(other.sprite_height/2)
-audio_play_sound_at(endies1, soundposx, soundposy, 0, 90, 150, 0.5, false, 1)
+sfx_play_at(endies1, soundposx, soundposy, 0, 90, 150, 0.5, false, 1)
 }
 }}
 if(deathcd==7){
@@ -142,6 +142,21 @@ instance_create(endingx,endingy,Goal)
 	rmcheck=1
 	musicchange=music_endresolution
 		}
+//Heart Container drop (once per boss)
+var _hbit=0
+if(room==Worldtwo_rm6_boss) _hbit=16
+else if(room==Worldtwo_rm2) _hbit=32
+else if(room==Worldtwo_rm3) _hbit=64
+if(_hbit>0&&(Control.bosshearts & _hbit)==0){
+Control.bosshearts=Control.bosshearts | _hbit
+created=instance_create(x+sprite_width/2,y,Item)
+created.itemtype=6
+if(room==Worldtwo_rm6_boss){
+created.image_index=0
+}else{
+created.image_index=1
+}
+}
 for(i=0;i<extragold;i+=1){
 created=instance_create(endingx+random(8),endingy+random(8),Item)
 created.itemtype=2

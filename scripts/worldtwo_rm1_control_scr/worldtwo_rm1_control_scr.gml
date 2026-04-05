@@ -446,7 +446,7 @@ function worldtwo_rm1_control_scr() {
 	if(delay<=0){
 	if(bounce>0){
 	if(instance_place(x+hsp,y+vsp+gravamount,Solid)){
-	audio_play_sound_at(choose(snd_burger_fries_hit1,snd_burger_fries_hit2),x,y, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_burger_fries_hit1,snd_burger_fries_hit2),x,y, 0, 90, 150, 0.5, false, 1) 
 	bounce-=1
 	delay=0
 	if(instance_place(x,y+vsp+gravamount,Solid)){
@@ -465,7 +465,7 @@ function worldtwo_rm1_control_scr() {
 	dir=0
 	}}}}}else{
 	if(instance_place(x+hsp,y+vsp+gravamount,Solid)||duration<=0){
-	audio_play_sound_at(choose(snd_burger_fries_hit1,snd_burger_fries_hit2),x,y, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_burger_fries_hit1,snd_burger_fries_hit2),x,y, 0, 90, 150, 0.5, false, 1) 
 	instance_destroy()
 	}}}else{
 	delay-=1

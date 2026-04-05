@@ -14,8 +14,17 @@ function inventory_scr() {
 	//Abilities
 	xpos=172-37
 	ypos=37
+	var _ablvl=maskArray[charArray[charselected,8],0];
 	for(i=0;i<3;i+=1){
+	var _ablocked=false;
+	if(i==2&&_ablvl<5){ _ablocked=true; }
+	if(i==1&&_ablvl<10){ _ablocked=true; }
+	if(_ablocked){
+	draw_sprite(abilpancd,i,xpos,ypos)
+	draw_text_ext_transformed_color(xpos+10,ypos-4,string_hash_to_newline(i==2?"Lv5":"Lv10"),3,1000,0.5,0.5,0,c_red,c_red,c_red,c_red,1)
+	}else{
 	draw_sprite(abilpan,i,xpos,ypos)
+	}
 	ypos+=27
 	}
 
@@ -351,6 +360,10 @@ function inventory_scr() {
 	if(actchar==3){
 	draw_text_ext_transformed(xpos+33,ypos+54+15,string_hash_to_newline(Control.maskArray[Control.charArray[Control.charselected,8],6]),1,1000,0.5,0.5,0);
 	}}}
+	if(actopttwo==1&&Control.maskArray[Control.charArray[Control.charselected,8],0]<15){
+	draw_text_ext_transformed_color(xpos-1,ypos+11,string_hash_to_newline("LOCKED"),1,1000,0.5,0.5,0,c_red,c_red,c_red,c_red,1);
+	draw_text_ext_transformed_color(xpos+3,ypos+20,string_hash_to_newline("Lv15"),1,1000,0.5,0.5,0,c_red,c_red,c_red,c_red,1);
+	}
 
 	}
 

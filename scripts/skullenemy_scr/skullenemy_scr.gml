@@ -162,7 +162,7 @@ function skullenemy_scr() {
 	if (hitme!=noone){
 	diddmg=1
 	Control.screenshake=8
-	audio_play_sound(snd_skullslam1,7,false)
+	sfx_play(snd_skullslam1,7,false)
 	with(hitme){
 	dr+=other.damage
 	drdraw+=other.damage
@@ -192,7 +192,7 @@ function skullenemy_scr() {
 	}
 	impact=vsp
 	Control.screenshake=8
-	audio_play_sound(snd_skullslam1,7,false)
+	sfx_play(snd_skullslam1,7,false)
 	vsp = 0
 	timer=0
 	phase=4
@@ -264,7 +264,7 @@ function skullenemy_scr() {
 	created.abil=0
 	}
 	Control.screenshake=4
-	audio_play_sound(snd_skullslam1,7,false)
+	sfx_play(snd_skullslam1,7,false)
 	image_index=9
 	}}else{
 	if(option==1){
@@ -280,7 +280,7 @@ function skullenemy_scr() {
 	created.abil=0
 	}
 	Control.screenshake=4
-	audio_play_sound(snd_skullslam1,7,false)
+	sfx_play(snd_skullslam1,7,false)
 	image_index=9
 	}}}
 

@@ -1,6 +1,6 @@
 function abilpassive_scr(argument0) {
 	if(Control.pause==0&&room!=Overworld_rm){
-	if(Control.maskArray[Control.charArray[Control.charselected,8],0]>=8){
+	if(Control.maskArray[Control.charArray[Control.charselected,8],0]>=999){
 	pet_scr(argument0)
 	}
 
@@ -444,7 +444,7 @@ function abilpassive_scr(argument0) {
 	duration-=1
 
 	if(duration<=0){
-	audio_play_sound_at(choose(snd_burger_fries_hit1,snd_burger_fries_hit2),x,y, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_burger_fries_hit1,snd_burger_fries_hit2),x,y, 0, 90, 150, 0.5, false, 1) 
 	for(i=0;i<8;i+=1){
 	image_angle=other.image_angle
 	created=instance_create(x,y,Dummy_two_object)
@@ -518,7 +518,7 @@ function abilpassive_scr(argument0) {
 	if(duration>0){
 	hit=instance_place(x,y,Enemy)
 	if(hit!=noone){
-	audio_play_sound_at(choose(snd_burger_fries_hit1,snd_burger_fries_hit2),x,y, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_burger_fries_hit1,snd_burger_fries_hit2),x,y, 0, 90, 150, 0.5, false, 1) 
 	with(hit){
 	grav=0
 	dr+=other.damage*Control.itemsArray[0,4]
@@ -537,7 +537,7 @@ function abilpassive_scr(argument0) {
 	if(delay<=0){
 	if(bounce>0){
 	if(instance_place(x+hsp,y+vsp+gravamount,Solid)){
-	audio_play_sound_at(choose(snd_burger_fries_hit1,snd_burger_fries_hit2),x,y, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_burger_fries_hit1,snd_burger_fries_hit2),x,y, 0, 90, 150, 0.5, false, 1) 
 	//bounce-=1
 	delay=0
 	if(instance_place(x,y+vsp+gravamount,Solid)){
@@ -668,7 +668,7 @@ function abilpassive_scr(argument0) {
 	passiveticktwo=0
 	created=instance_create(x+10+1+hsp,y+20,Dummy_three_object)
 	with(created){
-	audio_play_sound_at(choose(snd_burger_ketchup1,snd_burger_ketchup2,snd_burger_ketchup3),x,y, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_burger_ketchup1,snd_burger_ketchup2,snd_burger_ketchup3),x,y, 0, 90, 150, 0.5, false, 1) 
 	if(other.passivetickthree==1){
 	type=2
 	other.passivetickthree=0
@@ -844,7 +844,7 @@ function abilpassive_scr(argument0) {
 	duration-=1
 	hit=instance_place(x,y,Enemy)
 	if(hit!=noone){
-	audio_play_sound_at(choose(snd_burger_fries_hit1,snd_burger_fries_hit2),x,y, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_burger_fries_hit1,snd_burger_fries_hit2),x,y, 0, 90, 150, 0.5, false, 1) 
 	passivetarget=hit
 	with(hit){
 	grav=0
@@ -866,7 +866,7 @@ function abilpassive_scr(argument0) {
 	instance_destroy()
 	}
 	if(instance_place(x,y,Solid)||duration<=0){
-	audio_play_sound_at(choose(snd_burger_fries_hit1,snd_burger_fries_hit2),x,y, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_burger_fries_hit1,snd_burger_fries_hit2),x,y, 0, 90, 150, 0.5, false, 1) 
 	instance_destroy()
 	}
 	}}}
@@ -899,7 +899,7 @@ function abilpassive_scr(argument0) {
 	if(instance_exists(passivetarget)){
 	if(passivetargetduration<280){
 	if(passivetargetduration==0){
-	audio_play_sound(snd_burger_burger_passiveready1,1,false) 
+	sfx_play(snd_burger_burger_passiveready1,1,false) 
 	}
 	if(passivecounter<1&&Control.charcdArray[Me.charid,1]!=0){
 	//Control.charcdArray[Me.charid,1]=0
@@ -940,7 +940,7 @@ function abilpassive_scr(argument0) {
 
 	hit=instance_place(x,y,Enemy)
 	if(hit!=noone){
-	audio_play_sound_at(choose(snd_burger_fries_hit1,snd_burger_fries_hit2),x,y, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_burger_fries_hit1,snd_burger_fries_hit2),x,y, 0, 90, 150, 0.5, false, 1) 
 	passivetarget=hit
 	duration=0
 	with(hit){
@@ -1134,7 +1134,7 @@ function abilpassive_scr(argument0) {
 	duration=0
 	}
 	}else{
-	audio_play_sound_at(choose(snd_christmas_hit1,snd_christmas_hit2),x,y, 0, 90, 150, 0.5, false, 1)
+	sfx_play_at(choose(snd_christmas_hit1,snd_christmas_hit2),x,y, 0, 90, 150, 0.5, false, 1)
 	//effect
 	for(i=0;i<18;i+=1){
 	created=instance_create(x+choose(-3,-1.5,0,1.5,3),y-4+choose(-3,-1.5,0,1.5,3),Dummy_two_object)
@@ -1259,7 +1259,7 @@ function abilpassive_scr(argument0) {
 	}
 	}else{
 	if(phase==-1){
-	audio_play_sound_at(choose(snd_christmas_hit1,snd_christmas_hit2),x,y, 0, 90, 150, 0.5, false, 1)
+	sfx_play_at(choose(snd_christmas_hit1,snd_christmas_hit2),x,y, 0, 90, 150, 0.5, false, 1)
 	phase=-2
 	for(i=0;i<9;i+=1){
 	created=instance_create(x,y,Dummy_two_object)
@@ -1327,9 +1327,9 @@ function abilpassive_scr(argument0) {
 	if(vsp>0){
 	hit=instance_place(x+hsp,y+vsp,Dummy_solid)
 	if(hit!=noone){
-	if(hit.solidtype==50){
-	audio_play_sound(choose(snd_christmas_block1,snd_christmas_block2),1, false)
-	audio_play_sound_at(choose(snd_christmas_sound1,snd_christmas_sound2),x,y, 0, 90, 150, 0.5, false, 1)
+	if(hit.solidtype==50&&hit.jumpdel<=0){
+	sfx_play(choose(snd_christmas_block1,snd_christmas_block2),1, false)
+	sfx_play_at(choose(snd_christmas_sound1,snd_christmas_sound2),x,y, 0, 90, 150, 0.5, false, 1)
 	abilopttwo=1
 	if(Control.con_p_space||Control.conp_p_space||Control.con_h_space||Control.conp_h_space){
 	vsp=-2

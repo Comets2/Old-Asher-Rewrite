@@ -22,7 +22,7 @@ function abilstrig_wizard_scr(argument0) {
 	startanimdur=24
 	useaudio=1
 	spellsnd=audio_emitter_create()
-	audio_play_sound_on(spellsnd,choose(witch_abil1_snd1,witch_abil1_snd2),false,8)
+	sfx_play_on(spellsnd,choose(witch_abil1_snd1,witch_abil1_snd2),false,8)
 
 	if(option==1){
 	if(creator.direction==0){
@@ -382,7 +382,7 @@ function abilstrig_wizard_scr(argument0) {
 	useaudio=1
 	audiosize=5
 	spellsnd=audio_emitter_create()
-	audio_play_sound_on(spellsnd,choose(bat_snd1,bat_snd2),false,8)
+	sfx_play_on(spellsnd,choose(bat_snd1,bat_snd2),false,8)
 	}
 
 

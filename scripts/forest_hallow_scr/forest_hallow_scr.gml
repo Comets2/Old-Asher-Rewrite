@@ -123,7 +123,7 @@ function forest_hallow_scr() {
 	num+=1
 	if(point_distance(x,y,Me.x,Me.y)<275){
 	chance=choose(bat_snd1,bat_snd2)
-	audio_play_sound_at(chance,x,y, 0, 1, 150, 0.5, false, 1)
+	sfx_play_at(chance,x,y, 0, 1, 150, 0.5, false, 1)
 	}}
 	if(duration>0){
 	duration-=1

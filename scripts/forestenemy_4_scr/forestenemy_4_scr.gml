@@ -890,7 +890,7 @@ function forestenemy_4_scr() {
 	}else{
 	created=instance_create(creator.x+12,creator.y+45,Dummy_object)
 	}
-	audio_play_sound_at(choose(snd_bossproj_tree_3,snd_bossproj_tree_4),x,y, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_bossproj_tree_3,snd_bossproj_tree_4),x,y, 0, 90, 150, 0.5, false, 1) 
 	with(created){
 	pin=62
 	damage=1
@@ -951,7 +951,7 @@ function forestenemy_4_scr() {
 	created=instance_create(creator.x+12,creator.y+45,Dummy_object)
 	created.type=1
 	}
-	audio_play_sound_at(choose(snd_bossproj_tree_5,snd_bossproj_tree_6),x,y, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_bossproj_tree_5,snd_bossproj_tree_6),x,y, 0, 90, 150, 0.5, false, 1) 
 	with(created){
 	pin=63
 	audioplay=0
@@ -1017,7 +1017,7 @@ function forestenemy_4_scr() {
 	with(created){
 
 	pin=62
-	audio_play_sound_at(choose(snd_bossproj_tree_3,snd_bossproj_tree_4),x,y, 0, 90, 150, 0.5, false, 1) 
+	sfx_play_at(choose(snd_bossproj_tree_3,snd_bossproj_tree_4),x,y, 0, 90, 150, 0.5, false, 1) 
 	damage=1
 	sprite_index=treeheartleafshieldthree_spr
 	image_speed=0
