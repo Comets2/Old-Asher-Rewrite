@@ -40,6 +40,7 @@ charactercheck_scr()
 if(Control.pause==0&&room!=room4&&dead==0){
 visible=true
 statuseffects_scr()
+legendaryitem_scr()
 
 //**********{Regular}**********
 if(minigame==0){

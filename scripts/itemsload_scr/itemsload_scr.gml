@@ -51,6 +51,16 @@ function itemsload_scr() {
 	itemsArray[a,b]=0
 	}}}}
 
+	//TEST: Start with Legendary Honey Comb equipped in slot 1
+	itemsarray_add(4,1,500,6,0,0.06,0,0,0,0,0,0,0,0,0,colrare5)
+	itemsArray[4,15]="Honey Comb"
+	itemid+=1
+	itemsArray[4,16]=itemid
+	for(b=0;b<17;b+=1){
+	itemsArray[1,b]=itemsArray[4,b]
+	}
+	itemtotal=1
+
 	bonus=0
 	itemcap=40
 

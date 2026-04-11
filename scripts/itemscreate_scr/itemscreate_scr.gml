@@ -12,20 +12,25 @@ function itemscreate_scr() {
 	itemsArray[itemtotal+4,15]="Honey Comb"
 	chance=irandom(100-itemsArray[0,9]-bonus)
 	//chance=0
+	//Orange (Legendary)
+	if(chance<5){
+	itemsarray_add(itemtotal+4,1,500,6,0,0.06,0,0,0,0,0,0,0,0,0,colrare5)
+	}else{
 	//Purple
-	if(chance<25){
-	//itemsarray_add(itemtotal+4,1,300,4,0,0.02,0,0,0,0,0,0,0,0,0,colrare3)
-	itemsarray_add(itemtotal+4,1,200,4,0,0.04,0,0,0,0,0,0,0,0,0,colrare3)
+	if(chance<12){
+	itemsarray_add(itemtotal+4,1,350,5,0,0.05,0,0,0,0,0,0,0,0,0,colrare4)
 	}else{
 	//Blue
+	if(chance<25){
+	itemsarray_add(itemtotal+4,1,200,4,0,0.04,0,0,0,0,0,0,0,0,0,colrare3)
+	}else{
+	//Green
 	if(chance<=100){
-	//itemsarray_add(itemtotal+4,1,200,3,0,0,0,0,0,0,0,0,0,0,0,colrare2)
 	itemsarray_add(itemtotal+4,1,100,2,0,0,0,0,0,0,0,0,0,0,0,colrare2)
 	}else{
 	//White
-	//itemsarray_add(itemtotal+4,1,100,2,0,0,0,0,0,0,0,0,0,0,0,colrare1)
 	itemsarray_add(itemtotal+4,1,100,4,0,0,0,0,0,0,0,0,0,0,0,colrare1)
-	}}
+	}}}}
 	}else{
 	//________________________________________________________________************<<{Cake Slice}>>************________________________________________________________________
 	//itemsArray[]abilarray_add(0-itemslot,0-itemid,1-Value,2-Hp,3-Mana,4-Damage,5-Regen,6-Movespeed,7-Xp,8-Gold,9-Looting,10-Avoidence,11-Lifesteal,12-Crit,13-Move negitive,14-Rarity)

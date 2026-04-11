@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"legendaryitem_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"legendaryitem_scr",
+  "parent":{
+    "name":"Items",
+    "path":"folders/Scripts/Items.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

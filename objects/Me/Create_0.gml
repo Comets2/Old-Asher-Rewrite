@@ -70,6 +70,7 @@ destroy=0
 bjump=0
 
 slamcd=0
+legendaryitemcd=0
 
 hurttick=0
 hurt=0

@@ -391,6 +391,7 @@
     {"id":{"name":"itemsarray_add","path":"scripts/itemsarray_add/itemsarray_add.yy",},},
     {"id":{"name":"itemscreate_scr","path":"scripts/itemscreate_scr/itemscreate_scr.yy",},},
     {"id":{"name":"itemsload_scr","path":"scripts/itemsload_scr/itemsload_scr.yy",},},
+    {"id":{"name":"legendaryitem_scr","path":"scripts/legendaryitem_scr/legendaryitem_scr.yy",},},
     {"id":{"name":"levelsArrays_add","path":"scripts/levelsArrays_add/levelsArrays_add.yy",},},
     {"id":{"name":"lighting_scr","path":"scripts/lighting_scr/lighting_scr.yy",},},
     {"id":{"name":"loading_scr","path":"scripts/loading_scr/loading_scr.yy",},},
